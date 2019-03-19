@@ -27,3 +27,6 @@ The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpa
 해결방안: jstl jar 필요 라이브러리 추가  + 프로젝트 오른쪽 클린  clean   , Maven 클릭  Maven Clean로 해결 
 
 
+<div>
+<img src="https://i.imgur.com/6sSfJXW.png">
+</div>
