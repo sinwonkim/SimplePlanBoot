@@ -31,3 +31,23 @@ The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpa
 <div>
 <img src="https://i.imgur.com/6sSfJXW.png">
 </div>
+
+원인 : mybatis 연동이 제대로 되지 않아 있었음  mybatis연동하는 방식 아래 3가지 방식인데 나의 경우 1번과 2번을 혼합해서 사용하는 방식을 
+       사용해서 하다가 제대로 마이바티스 연동이 되지 않았음. @MaperScan과  sqlsession을 사용해서 제대로 인식을 못함.. 
+
+해결방안 
+<div>
+<img src="https://i.imgur.com/ErgEwT4.png">  
+</div>
+
+매퍼스캔방식 안하고  XML만을 이용해서 SQL문을 설정하는 방식으로 하였다. 
+
+MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과 
+같이 나눠짐
+
+1.XML만을 이용해서 SQL문을 설정, DAO에서는 XML을 찾아서 
+  실행하는 코드를 작성하는 방식
+
+2. 애노테이션과 인터페이스만을 이용해서 SQL문을 설정 
+
+3.간단한 SQL문은 애노테이션으로, 복잡한 SQL문은 XML로처리
