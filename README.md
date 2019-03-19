@@ -24,6 +24,7 @@ Launching springBoot -Aplication' has encountered a problem
 The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpath, does not exist
 
 원인 : jstl jar 파일이 존재하지 않아서 내꺼 프로젝트 자체를 인식못함 
+
 해결방안: jstl jar 필요 라이브러리 추가  + 프로젝트 오른쪽 클린  clean   , Maven 클릭  Maven Clean로 해결 
 
 ---
