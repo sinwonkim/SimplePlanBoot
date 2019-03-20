@@ -23,7 +23,9 @@ Profiles 부분에 있는 pom.xml 삭제 (여기에 내 경우 안적혀 있었�
 Launching springBoot -Aplication' has encountered a problem
 The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpath, does not exist
 
-원인 : jstl jar 파일이 존재하지 않아서 내꺼 프로젝트 자체를 인식못함 
+원인 :
+jstl jar 파일이 존재하지 않아서 내꺼 프로젝트 자체를 인식못함 
+
 해결방안: jstl jar 필요 라이브러리 추가  + 프로젝트 오른쪽 클린  clean   , Maven 클릭  Maven Clean로 해결 
 
 ---
@@ -32,8 +34,9 @@ The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpa
 <img src="https://i.imgur.com/6sSfJXW.png">
 </div>
 
-원인 : mybatis 연동이 제대로 되지 않아 있었음  mybatis연동하는 방식 아래 3가지 방식인데 나의 경우 1번과 2번을 혼합해서 사용하는 방식을 
-       사용해서 하다가 제대로 마이바티스 연동이 되지 않았음. @MaperScan과  sqlsession을 사용해서 제대로 인식을 못함.. 
+원인 : 
+mybatis 연동이 제대로 되지 않아 있었음  mybatis연동하는 방식 아래 3가지 방식인데 나의 경우 1번과 2번을 혼합해서 사용하는 방식을 
+사용해서 하다가 제대로 마이바티스 연동이 되지 않았음. @MaperScan과  sqlsession을 사용해서 제대로 인식을 못함.. 
 
 해결방안 
 <div>
