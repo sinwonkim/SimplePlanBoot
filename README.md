@@ -54,3 +54,24 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 2.애노테이션과 인터페이스만을 이용해서 SQL문을 설정 
 
 3.간단한 SQL문은 애노테이션으로, 복잡한 SQL문은 XML로처리
+
+---
+
+<div>
+<img src="https://i.imgur.com/FaznXDu.png">
+</div>
+<div>
+<img src="https://i.imgur.com/WEXvalb.png">
+</div>
+
+원인 : MemberVO라는 객체를 못 찾는데  에러를 자세히 안보면 초반부에는 다른 컨트롤러의 sqlsession이 inject 안됬다고 뜬다 하지만 실제 에러의 
+      원인은 Mapper 의 쿼리중 ResultType이 MemberVO로 된걸 못 찾는데 있었다. 
+    
+
+해결
+<div>
+  <img src="https://i.imgur.com/4o9Ejfs.png">
+</div>
+
+컨트롤러에서 MemberVO 리스트를 만들고   서비스를 호출해서 궁극적으론 Mapper에서 Member테이블의 데이터를 가져와 데이터의 값을 비교하는 테스트를 
+하려고 호출한 거였는데 ResultType에서   Alias 별칭으로 사용하지 않았을시에는 정확히 ResultType의 경로를 ResultType에 작성해주어야 한다.
