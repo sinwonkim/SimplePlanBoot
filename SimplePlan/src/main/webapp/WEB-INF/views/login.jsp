@@ -14,20 +14,20 @@
     <link rel="stylesheet" href="/resources/css/signUp.css">
     <script>
     	function Login() {
-	        var form = document.login-form;
+	        var form1 = document.login_form;
 	        var id = document.getElementById('member_id');
-	        var password = document.getElementById('member_password')
+	        var password = document.getElementById('member_password');
 	        if(id.value == ""){
 	            alert("아이디를 입력해야 합니다.")
-	            form.name.focus();
+	            id.focus();
 	            return;
 	        }
 	        if(password.value == "") {
 	            alert("패스워드를 입력해야 합니다.")
-	            form.password.focus();
-	            retrun;
+	            password.focus();
+	            return;
 	        }
-	        form.submit();
+	        form1.submit();
    	 }  
     </script>
 </head>
@@ -93,7 +93,7 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">로그인</h2>
-                        <form action="" method="POST" class="register-form" name="login-form">
+                        <form action="member/login" method="GET" class="register-form" name="login_form" id="login_form">
                             <div class="form-group">
                                 <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_id" id="member_id" placeholder="Id"/>
@@ -107,7 +107,7 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="button" name="signin" id="signin" class="form-submit" value="로그인" onclick="Login();"/>
+                                <input type="button" name="signin" id="signin" value="로그인" onclick="Login();"/>
                             </div>
                         </form>
                         <!-- <div class="social-login">

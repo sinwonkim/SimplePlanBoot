@@ -12,6 +12,42 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 <!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
+    <script>
+    	function signUp() {
+	        var form1 = document.sign_up;
+	        var id = document.getElementById('member_id');
+	        var password = document.getElementById('member_password');
+	        var name = document.getElementById('member_name');
+	        var email = document.getElementById('member_email');
+	        var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+	        if(id.value == ""){
+	            alert("아이디를 입력해야 합니다.")
+	            id.focus();
+	            return;
+	        }
+	        if(password.value == "") {
+	            alert("패스워드를 입력해야 합니다.")
+	            password.focus();
+	            return;
+	        }
+	        if(name.value == "") {
+	            alert("이름을 입력해야 합니다.")
+	            name.focus();
+	            return;
+	        }
+	        if(email.value == "") {
+	            alert("이메일을 입력해야 합니다.")
+	            email.focus();
+	            return;
+	        }
+	        if(exptext.test(email.value)==false) {
+	        	alert("이메일형식이 올바르지 않습니다. ex)아이디@naver.com")
+	        	email.focus();
+	        	return false;
+	        }
+	        form1.submit();
+   	 }  
+    </script>
 </head>
 <body>
 <!-- Nav쪽 -->
@@ -71,35 +107,39 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">회원가입</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form action="signUp" method="POST" class="register-form" name="sign_up" id="sign_up">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="member_id" id="member_id" placeholder="아이디"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            	<label for="member_password"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            	<input type="password" name="member_password" id="member_password" placeholder="패스워드"/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <label for="member_name"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="member_name" id="member_name" placeholder="이름"/>
                             </div>
                             <div class="form-group">
+                                <label for="member_email"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="email" name="member_email" id="member_email" placeholder="이메일"/>
+                            </div>
+                          <!--   <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                                <input type="button" name="signup" id="signup" value="회원가입" onclick="signUp();"/>
                             </div>
                         </form>
                     </div>
                     <div class="signup-image">
                         <figure><img src="/resources/images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="login" class="/resources/images/signup-image-link">I am already member</a>
+                        <a href="/member/login" class="/resources/images/signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>

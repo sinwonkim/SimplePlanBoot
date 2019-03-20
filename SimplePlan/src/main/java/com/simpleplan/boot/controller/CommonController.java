@@ -10,9 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.simpleplan.boot.domain.MemberVO;
 import com.simpleplan.boot.service.BoardService;
 
 @Controller
@@ -31,28 +31,18 @@ public class CommonController {
         
         return "test";
     }
-	// RequestParamTest 
-	@RequestMapping(value ="/studentParam", method = RequestMethod.GET)
-	public String getStudent(@RequestParam("nickName")String nickName,Model model) {
-		model.addAttribute("nickName",nickName);
+	@RequestMapping(value = "/voTest", method = RequestMethod.GET)
+	public String loginVo(MemberVO memberVO,Model model) {
+		
+		System.out.println(memberVO.getMember_id());
+		System.out.println(memberVO.getMember_password());
+		model.addAttribute("memberVO", memberVO);
 		return "test";
 	}
 	
-	// student POST 
-	@RequestMapping(value = "/student", method = RequestMethod.POST)
-    public String postStudent(HttpServletRequest httpServletRequest, Model model) {
-        
-        System.out.println("RequestMethod.GET");
-        
-        String passWord = httpServletRequest.getParameter("password");
-        System.out.println("id : " + passWord);
-        model.addAttribute("studentPassword", passWord);
-        
-        return "test";
-    }
-
 	
-	@RequestMapping("/test1")
+	
+   	@RequestMapping("/test1")
 	private ModelAndView jspTest() throws Exception {
 		ModelAndView modelAndView = new ModelAndView("test"); // 리턴 view페이지 설정 
 		Map<String, String> charactor =  new HashMap<String,String>();

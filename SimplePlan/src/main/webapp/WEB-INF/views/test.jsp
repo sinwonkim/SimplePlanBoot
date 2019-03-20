@@ -12,18 +12,15 @@
 <h2>TEST페이지 입니다.</h2>
 
 <h2>${home}</h2>
-${boardVO.bno}
-
-<c:forEach var="LoL" items="${charactor}">
-JSP표준 태그라이브러리중 JSTL의 Core의 c를 활용한 forEach 사용 ${LoL.key}
-</c:forEach>
-
-<body>
-   home.jsp페이지에서 get방식으로 student컨트롤러로 보낸  StudentId : ${studentId}<br>
-   home.jsp페이지에서 post방식으로 student컨트롤러로 보낸 password : ${studentPassword}
-</body>
 
 
+<%-- 
+<c:forEach var="member" items="${memberList}">
+  아이디 : ${member.member_id}
+    이름 : ${member.member_name}
+    이메일 : ${member.member_email}
+</c:forEach> --%>
+멤버 리스트 : ${memberList}
 
 </body>
 </html>
