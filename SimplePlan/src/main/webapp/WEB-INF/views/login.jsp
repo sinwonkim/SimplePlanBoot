@@ -12,6 +12,24 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 <!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
+    <script>
+    	function Login() {
+	        var form = document.login-form;
+	        var id = document.getElementById('member_id');
+	        var password = document.getElementById('member_password')
+	        if(id.value == ""){
+	            alert("아이디를 입력해야 합니다.")
+	            form.name.focus();
+	            return;
+	        }
+	        if(password.value == "") {
+	            alert("패스워드를 입력해야 합니다.")
+	            form.password.focus();
+	            retrun;
+	        }
+	        form.submit();
+   	 }  
+    </script>
 </head>
 <body>
 <!-- Nav쪽 -->
@@ -75,39 +93,38 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">로그인</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form action="" method="POST" class="register-form" name="login-form">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="member_id" id="member_id" placeholder="Id"/>
                             </div>
                             <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <label for="member_password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="member_password" id="member_password" placeholder="Password"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                <input type="button" name="signin" id="signin" class="form-submit" value="로그인" onclick="Login();"/>
                             </div>
                         </form>
-                        <div class="social-login">
+                        <!-- <div class="social-login">
                             <span class="social-label">Or login with</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </section>
 
     </div>
-<script
-  src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
