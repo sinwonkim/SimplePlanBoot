@@ -6,7 +6,7 @@ If you do using this you can easy to make a plan ^_^
 ---
 ## 메인화면
 <div>
-<img src = "https://i.imgur.com/undefined.png">
+<img src = "https://i.imgur.com/be3DjCB.jpg">
 </div>
   
 ## 로그인
