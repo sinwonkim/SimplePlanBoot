@@ -3,6 +3,7 @@ package com.simpleplan.boot.service;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -20,13 +21,24 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberDao.listAll();
 	}
-
+	
+	// 회원가입 
 	@Override
 	public void signUp(MemberVO memberVO) throws Exception {
 
 		 memberDao.signUp(memberVO);
 		
 	}
+	
+	// 회원 로그인 체크
+	@Override
+	public boolean loginCheck(MemberVO memberVO, HttpSession session) throws Exception {
+		boolean result = memberDao.loginCheck(memberVO);
+		return result;
+	}
+
+
+	
 
 
 

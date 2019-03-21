@@ -14,17 +14,28 @@ public class MemberDaoImpl implements MemberDao {
 	
 	private static final String namespace="mapper.MemberMapper";
 	
+	// 
 	@Override
 	public MemberVO listAll() throws Exception {
 		// TODO Auto-generated method stub
 		return sqlssion.selectOne(namespace+".listAll");
 	}
-
+	
+	// 회원가입
 	@Override
 	public void signUp(MemberVO memberVO) throws Exception {
 		sqlssion.selectOne(namespace+".signUp",memberVO);
 		
 	}
+
+	// 회원 로그인 확인
+	@Override
+	public boolean loginCheck(MemberVO memberVO) throws Exception {
+		String name = sqlssion.selectOne(namespace+".loginCheck", memberVO);
+		return (name == null) ? false : true;
+	}
+	
+
 
 	
 }

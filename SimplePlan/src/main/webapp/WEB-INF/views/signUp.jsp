@@ -47,6 +47,14 @@
 	        }
 	        form1.submit();
    	 }  
+    	
+    	 // 회원가입완료 시 문구 
+        var msg = "${msg}";
+        if (msg === "SIGNUP") {
+        	alert("회원가입이 완료 되었습니다. 로그인 해주세요.");
+        } else if (msg === "FAIL") {
+        	alert("아이디와 비밀번호를 확인해주세요")
+        }
     </script>
 </head>
 <body>
@@ -68,7 +76,7 @@
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
-	        <li><a href="#">2번 메뉴</a></li> 
+	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="boardList.jsp">게시판</a></li> 
 	      </ul>
 	    </div>
@@ -148,7 +156,7 @@
         </div>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
- <script src="resources/js/bootstrap.min.js"></script>
+ <script src="/resources/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 </body>
 </html>

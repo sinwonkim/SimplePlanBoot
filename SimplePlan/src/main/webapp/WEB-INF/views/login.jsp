@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,7 @@
 <!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
     <script>
+    //로그인 폼 체크와 submit
     	function Login() {
 	        var form1 = document.login_form;
 	        var id = document.getElementById('member_id');
@@ -29,6 +31,8 @@
 	        }
 	        form1.submit();
    	 }  
+    	
+   
     </script>
 </head>
 <body>
@@ -50,7 +54,7 @@
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
-	        <li><a href="#">2번 메뉴</a></li> 
+	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="boardList.jsp">게시판</a></li> 
 	      </ul>
 	    </div>
@@ -80,7 +84,9 @@
 	
 	  </div>
 	</nav>
-	
+<!-- 세션이 존재할 때 -->
+ <c:if test="${sessionScope.member_id eq null }">	
+
  <div class="login">
 <!-- Sing in  Form -->
         <section class="sign-in">
@@ -90,10 +96,12 @@
                         <figure><img src="/resources/images/signin-image.jpg" alt="sing up image"></figure>
                         <a href="signUp" class="signup-image-link">Create an account</a>
                     </div>
-
+                   
+							
+					
                     <div class="signin-form">
                         <h2 class="form-title">로그인</h2>
-                        <form action="member/login" method="GET" class="register-form" name="login_form" id="login_form">
+                        <form action="member/loginCheck" method="GET" class="register-form" name="login_form" id="login_form">
                             <div class="form-group">
                                 <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_id" id="member_id" placeholder="Id"/>
@@ -122,8 +130,13 @@
                 </div>
             </div>
         </section>
-
     </div>
+    </c:if>
+    <!-- 로그인 된 상태일  때 -->
+    <c:if test="${sessionScope.member_id ne null }">
+    	 <script>alert('로그인 되었습니다.');</script>
+    	<c:redirect url="main"/>
+    </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
 </body>

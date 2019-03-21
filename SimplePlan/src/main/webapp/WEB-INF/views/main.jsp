@@ -34,7 +34,7 @@
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main.jsp"  style="margin-left:0px;">Home</a></li>
-	        <li><a href="#">2번 메뉴</a></li> 
+	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="boardList.jsp">게시판</a></li> 
 	      </ul>
 	    </div>
@@ -57,7 +57,7 @@
 				<a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expended="false">회원관리<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="logoutAction.jsp">로그아웃</a></li> 
+					<li><a href="logOut">로그아웃</a></li> 
 				</ul>
 			</li>
 		</ul>
@@ -91,7 +91,7 @@
             <p> © 2019. All Rights Reserved 117@naver.com
                 <br>
                 <span>sinwonkim </span></p>
-            <p><a href="https://github.com/sinwonkim"">Sinwon's Git <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
+            <p><a href="https://github.com/sinwonkim">Sinwon's Git <i class="fa fa-linkedin-square" aria-hidden="true"></i> </a></p>
         </div>
 	 
 	

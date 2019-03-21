@@ -15,6 +15,14 @@
 		where member_no = 1
 		]]>	
 	</select>	
+	
+	 <select id="loginCheck" resultType="String">
+		<![CDATA[
+		select member_id,member_password from member
+		where member_id = #{member_id} AND member_password = #{member_password}
+		]]>	
+	</select>	
+	
 	<insert id="signUp">
 	<![CDATA[
 		INSERT INTO member (
