@@ -4,13 +4,14 @@ If you do using this you can easy to make a plan ^_^
 ---
 
 ## 기술스택
-Spring boot+maven+mybatis+mysql
+Spring boot(2.1.3)+Maven+MyBatis+Mysql
 
 Front End: HTML, CSS, JavaScript, BootStrap
 Back End: JAVA
 library: JSTL
 DB: MySQL
 
+---
 
 ## Trouble Shooting
 <div>
