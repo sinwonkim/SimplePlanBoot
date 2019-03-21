@@ -1,5 +1,35 @@
 # SimplePlanBoot
+생각의 정리가 필요할 때 어떠한 주제나 생각에 관하여 다른 사람의 의견을 물어보고  싶을때 이용 하세요.
+
 If you do using this you can easy to make a plan ^_^
+
+---
+## 메인화면
+<div>
+<img src = "https://i.imgur.com/be3DjCB.jpg">
+</div>
+  
+## 로그인
+<div>
+<img src = "https://i.imgur.com/txqDb1o.png">
+</div>
+
+## 회원가입
+<div>
+<img src = "https://i.imgur.com/azeVXKf.png">
+</div>
+
+
+---
+## 기술스택
+Spring boot(2.1.3)+Maven+MyBatis+Mysql
+
+Front End: HTML, CSS, JavaScript, BootStrap
+Back End: JAVA
+library: JSTL
+DB: MySQL
+
+---
 
 ## Trouble Shooting
 <div>
@@ -54,3 +84,29 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 2.애노테이션과 인터페이스만을 이용해서 SQL문을 설정 
 
 3.간단한 SQL문은 애노테이션으로, 복잡한 SQL문은 XML로처리
+
+---
+
+<div>
+<img src="https://i.imgur.com/FaznXDu.png">
+</div>
+<div>
+<img src="https://i.imgur.com/WEXvalb.png">
+</div>
+
+원인 : MemberVO라는 객체를 못 찾는데  에러를 자세히 안보면 초반부에는 다른 컨트롤러의 sqlsession이 inject 안됬다고 뜬다 하지만 실제 에러의 
+      원인은 Mapper 의 쿼리중 ResultType이 MemberVO로 된걸 못 찾는데 있었다. 
+    
+
+해결
+<div>
+  <img src="https://i.imgur.com/4o9Ejfs.png">
+</div>
+
+컨트롤러에서 MemberVO 리스트를 만들고   서비스를 호출해서 궁극적으론 Mapper에서 Member테이블의 데이터를 가져와 데이터의 값을 비교하는 테스트를 
+하려고 호출한 거였는데 ResultType에서   Alias 별칭으로 사용하지 않았을시에는 정확히 ResultType의 경로를 ResultType에 작성해주어야 한다.
+
+
+참고사항
+---
+1인개발 3월 15일부터 현재 진행중 입니다.
