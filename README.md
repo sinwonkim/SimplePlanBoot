@@ -4,7 +4,23 @@
 If you do using this you can easy to make a plan ^_^
 
 ---
+## 메인화면
+<div>
+<src img="https://i.imgur.com/undefined.png">
+</div>
+  
+## 로그인
+<div>
+<src img="https://i.imgur.com/txqDb1o.png">
+</div>
 
+## 회원가입
+<div>
+<src img="https://i.imgur.com/azeVXKf.png">
+</div>
+
+
+---
 ## 기술스택
 Spring boot(2.1.3)+Maven+MyBatis+Mysql
 
