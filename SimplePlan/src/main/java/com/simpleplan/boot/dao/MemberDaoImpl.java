@@ -35,6 +35,13 @@ public class MemberDaoImpl implements MemberDao {
 		return (name == null) ? false : true;
 	}
 	
+	// 회원가입 중복 체크 
+	@Override
+	public boolean signUpCheck(MemberVO memberVO) throws Exception {
+		String name = sqlssion.selectOne(namespace+".signUpCheck",memberVO);
+		return (name == null) ? true : false;
+	}
+	
 
 
 	

@@ -101,7 +101,7 @@
 					
                     <div class="signin-form">
                         <h2 class="form-title">로그인</h2>
-                        <form action="member/loginCheck" method="GET" class="register-form" name="login_form" id="login_form">
+                        <form action="loginCheck" method="GET" class="register-form" name="login_form" id="login_form">
                             <div class="form-group">
                                 <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_id" id="member_id" placeholder="Id"/>
@@ -134,8 +134,9 @@
     </c:if>
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');</script>
-    	<c:redirect url="main"/>
+    	 <script>alert('로그인 되었습니다.');
+    	 location.href='main';
+    	 </script>	
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>

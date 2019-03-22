@@ -60,7 +60,7 @@ public class CommonController {
 		
 		return "boardWrite";
 	}
-	@RequestMapping("/main")
+/*	@RequestMapping("/main")
 	private String main() {
 		return "main";
 	}
@@ -73,5 +73,5 @@ public class CommonController {
 	@RequestMapping("/signUp")
 	private String signUp() {
 		return "signUp";
-	}
+	}*/
 }

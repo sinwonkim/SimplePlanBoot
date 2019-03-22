@@ -23,6 +23,12 @@
 		]]>	
 	</select>	
 	
+	<select id="signUpCheck" resultType="String">
+		<![CDATA[
+		select member_id from member where member_id = #{member_id} 
+		]]>	
+	</select>	
+	
 	<insert id="signUp">
 	<![CDATA[
 		INSERT INTO member (

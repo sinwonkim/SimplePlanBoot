@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,6 +108,7 @@
 	  </div>
 	</nav>
 
+ <c:if test="${sessionScope.member_id eq null }">	
     <div class="main">
 
         <!-- Sign up form -->
@@ -152,8 +154,13 @@
                 </div>
             </div>
         </section>
-
         </div>
+        </c:if>
+        <c:if test="${sessionScope.member_id ne null }">
+    	 <script>alert('로그인된 상태 입니다.');
+    	 location.href='main';
+    	 </script>	
+    </c:if>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
  <script src="/resources/js/bootstrap.min.js"></script>

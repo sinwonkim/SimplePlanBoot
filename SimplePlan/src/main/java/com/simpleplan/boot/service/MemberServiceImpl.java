@@ -37,6 +37,12 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	@Override
+	public boolean signUpCheck(MemberVO memberVO) throws Exception {
+		boolean result = memberDao.signUpCheck(memberVO);
+		return result;
+	}
+
 
 	
 

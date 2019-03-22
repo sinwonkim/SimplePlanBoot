@@ -46,7 +46,7 @@ public class MemberController {
 			mav.addObject("msg", "success");
 		} else { // 로그인 실패
 			// login.jsp로 이동 
-			mav.setViewName("member/login");
+			mav.setViewName("login");
 			mav.addObject("msg","fail");
 		}
 		return mav;
@@ -68,10 +68,21 @@ public class MemberController {
 	
 	// 회원가입 처리
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	public String signUpPOST(MemberVO memberVO,RedirectAttributes redirectAttributes) throws Exception {
-		memberService.signUp(memberVO);
+	public String signUpPOST(@ModelAttribute MemberVO memberVO,HttpSession session, RedirectAttributes redirectAttributes) throws Exception {
+		boolean result = memberService.signUpCheck(memberVO);
+		String location ="";
+		System.out.println("회원가입 값 결과"+result);
+		if(result) { // 회원여부 존재하지 않으면  true 를 반환해서  회원가입 실행 
+			location ="main"; 
+			memberService.signUp(memberVO);	 // 실질적 회원가입 
+			session.setAttribute("member_id", memberVO.getMember_id());
+			session.setAttribute("member_name", memberVO.getMember_name());
+		} else { 
+			location ="signUp"; // false 이미 존재하는 아이디면 회원가입 페이지로
+		}
+		
 		redirectAttributes.addAttribute("msg","SIGNUP");
 		
-		return "redirect:/member/login";
+		return "redirect:/member/"+location;
 	}
 }
