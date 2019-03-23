@@ -89,22 +89,13 @@
 					aria-expended="false">접속하기<span class="caret"></span></a>
 				<ul class="dropdown-menu" style="min-width: 80px;">
 					<li><a href="login">로그인</a></li> 
+					<c:if test="${sessionScope.member_id ne null }">	
+					<li><a href="logOut">로그아웃</a></li>
+					</c:if> 
 					<li><a href="signUp">회원가입</a></li>
 				</ul>
 			</li>
 		</ul>
-		
-		
-			<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expended="false">회원관리<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="logoutAction.jsp">로그아웃</a></li> 
-				</ul>
-			</li>
-		</ul>
-	
 	  </div>
 	</nav>
 
@@ -156,6 +147,12 @@
         </section>
         </div>
         </c:if>
+        
+        <!-- 회원가입 실패했을 때 -->
+        <c:if test="${errMsg ne null}">
+        	<script>alert('${errMsg}');</script>	
+        </c:if>
+        
         <c:if test="${sessionScope.member_id ne null }">
     	 <script>alert('로그인된 상태 입니다.');
     	 location.href='main';

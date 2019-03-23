@@ -50,8 +50,8 @@ public class CommonController {
 		charactor.put("yasuo","야스오");
 		modelAndView.addObject("home","ModelAndView 클래스를  활용한 : HelloWorld");
 		modelAndView.addObject("charactor",charactor);
-		System.out.println(">>>>>>>boardCount Test :"+boardService.boardCount()); // TEST
-		System.out.println();
+	/*	System.out.println(">>>>>>>boardCount Test :"+boardService.boardCount()); // TEST
+*/		System.out.println();
 		return modelAndView;
 	}	
 	

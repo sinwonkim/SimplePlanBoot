@@ -66,22 +66,14 @@
 					aria-expended="false">접속하기<span class="caret"></span></a>
 				<ul class="dropdown-menu" style="min-width: 80px;">
 					<li><a href="login">로그인</a></li> 
+					<c:if test="${sessionScope.member_id ne null }">	
+					<li><a href="logOut">로그아웃</a></li>
+					</c:if> 
 					<li><a href="signUp">회원가입</a></li>
+					
 				</ul>
 			</li>
 		</ul>
-		
-		
-			<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expended="false">회원관리<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="logoutAction.jsp">로그아웃</a></li> 
-				</ul>
-			</li>
-		</ul>
-	
 	  </div>
 	</nav>
 <!-- 세션이 존재할 때 -->
@@ -101,7 +93,7 @@
 					
                     <div class="signin-form">
                         <h2 class="form-title">로그인</h2>
-                        <form action="loginCheck" method="GET" class="register-form" name="login_form" id="login_form">
+                        <form action="loginCheck" method="POST" class="register-form" name="login_form" id="login_form">
                             <div class="form-group">
                                 <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_id" id="member_id" placeholder="Id"/>

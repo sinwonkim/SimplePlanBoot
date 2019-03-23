@@ -56,6 +56,38 @@
 	  </div>
 	</nav>
 	
+	<!-- 게시판 -->
+<div class="container">
+    <form id="boardForm" name="boardForm" method="post">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성자</th>
+                    <th>글작성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="list" items="${list}" varStatus="status">
+                    <tr>
+                        <td>${list.board_bno}</td>
+                        <td>${list.board_title}</td>
+                        <td>${list.board_title}</td>
+                        <td>${list.board_writer}</td>
+                        <td>${list.board_regdate}</td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table> 
+        <div>            
+            <a href='#' onClick='fn_write()' class="btn btn-success">글쓰기</a>            
+        </div>
+    </form>
+</div>
+	
+	
 	
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">

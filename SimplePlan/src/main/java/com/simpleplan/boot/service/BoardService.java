@@ -1,7 +1,11 @@
 package com.simpleplan.boot.service;
 
+import java.util.List;
+
+import com.simpleplan.boot.domain.BoardVO;
+
 public interface BoardService {
-	public int boardCount() throws Exception;
 	
+	public List<BoardVO> boardList() throws Exception;
 	
 }
