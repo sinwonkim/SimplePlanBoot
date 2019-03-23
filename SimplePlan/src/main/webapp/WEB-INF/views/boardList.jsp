@@ -82,7 +82,7 @@
             </tbody>
         </table> 
         <div>            
-            <a href='#' onClick='fn_write()' class="btn btn-success">글쓰기</a>            
+            <a href="/board/write"  class="btn btn-success">글쓰기</a>            
         </div>
     </form>
 </div>
@@ -91,9 +91,9 @@
 	
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');
-    	 location.href='main';
-    	 </script>	
+    	 <script>alert('게시판 입니다..');   	 </script>
+ 
+ 	
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>

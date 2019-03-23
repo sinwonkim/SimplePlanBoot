@@ -44,11 +44,11 @@
 				<a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expended="false">접속하기<span class="caret"></span></a>
 				<ul class="dropdown-menu" style="min-width: 80px;">
-					<li><a href="login">로그인</a></li> 
+					<li><a href="/member/login">로그인</a></li> 
 					<c:if test="${sessionScope.member_id ne null }">	
-					<li><a href="logOut">로그아웃</a></li>
+					<li><a href="/member/logOut">로그아웃</a></li>
 					</c:if> 
-					<li><a href="signUp">회원가입</a></li>
+					<li><a href="/member/signUp">회원가입</a></li>
 					
 				</ul>
 			</li>
@@ -56,11 +56,22 @@
 	  </div>
 	</nav>
 	
+	<!-- 게시판 글쓰기  -->
+	<div class="container">
+			<h2 class="mt-sm-5">게시판 글작성</h2>
+			<form action="/board/write" method="POST">
+				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" placeholder="${id}">
+				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" placeholder="제목">
+				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content"></textarea>
+				<button type="submit" class="btn btn-primary" style="margin-left: 45%;">등록</button>
+			</form>
+		</div>
+	
 	
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');
-    	 location.href='main';
+    	 <script>alert('글쓰기 페이지 입니다.');
+    	
     	 </script>	
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
