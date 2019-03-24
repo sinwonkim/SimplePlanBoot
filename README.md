@@ -117,17 +117,25 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 <div>
   <img src="https://i.imgur.com/d75iMO1.png">
 </div>
+게시판 글쓰는 폼인데 폼 method는 POST 방식으로 해놓았는데   해당 컨트롤러를 보면 
+
 <div>
   <img src="blob:https://imgur.com/f82676f2-2a41-462f-93cc-856156322570">
 </div>
 <div>
   <img src="https://i.imgur.com/0QZzBwp.png">
 </div>
+boardService.boardInsert() 를 통해 폼에서 작성된 writer와, title,content 를 BoardVO 객체로 셋 한 이후로 전달인자로 사용 하는데 
+거기서 writer 경우 not null 로 설정 해놨다. 난 단순히 write 페이지를 보려고 했는데  그러한 이유로 not null이 발생해서 에러가 발생 
+
 
 [해결]
 <div>
    <img src="https://i.imgur.com/OgHRKHo.png">
 </div>
+
+단순히 boardWrite 페이지를 GET방식으로 하나더 매핑 시켜 boardWrite 페이지를 view 띄워줘서 해결 하였다.
+
 
 참고사항
 ---
