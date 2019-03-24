@@ -108,11 +108,12 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 
 ---
 
+[에러]
 <div>
   <img src="https://i.imgur.com/w1RC6cA.png">
 </div>
 
-원인 :
+[원인]
 <div>
   <img src="https://i.imgur.com/d75iMO1.png">
 </div>
