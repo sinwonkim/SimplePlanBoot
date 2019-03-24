@@ -120,6 +120,9 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 <div>
   <img src="blob:https://imgur.com/f82676f2-2a41-462f-93cc-856156322570">
 </div>
+<div>
+  <img src="https://i.imgur.com/0QZzBwp.png">
+</div>
 
 [해결]
 <div>
