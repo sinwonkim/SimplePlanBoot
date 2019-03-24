@@ -106,6 +106,11 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 컨트롤러에서 MemberVO 리스트를 만들고   서비스를 호출해서 궁극적으론 Mapper에서 Member테이블의 데이터를 가져와 데이터의 값을 비교하는 테스트를 
 하려고 호출한 거였는데 ResultType에서   Alias 별칭으로 사용하지 않았을시에는 정확히 ResultType의 경로를 ResultType에 작성해주어야 한다.
 
+---
+
+<div>
+  <img src="https://i.imgur.com/w1RC6cA.png">
+</div>
 
 참고사항
 ---
