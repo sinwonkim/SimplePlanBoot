@@ -114,7 +114,7 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
 
 원인 :
 <div>
-  <img src="https://i.imgur.com/undefined.png">
+  <img src="https://i.imgur.com/d75iMO1.png">
 </div>
 <div>
   <img src="blob:https://imgur.com/f82676f2-2a41-462f-93cc-856156322570">
