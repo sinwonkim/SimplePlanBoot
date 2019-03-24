@@ -33,11 +33,11 @@ DB: MySQL
 
 ## Trouble Shooting
 
-[에러]
+[에러][WARNING] The requested profile "pom.xml" could not be activated because it does not exist. 
 <div>
 <img src="https://i.imgur.com/VBoXQmg.png">
 </div>
-[WARNING] The requested profile "pom.xml" could not be activated because it does not exist. 
+
 
 [해결1-1]
 프로젝트 마우스 오른쪽 클릭
