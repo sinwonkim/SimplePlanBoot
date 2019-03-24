@@ -150,11 +150,11 @@
         
         <!-- 회원가입 실패했을 때 -->
         <c:if test="${errMsg ne null}">
-        	<script>swal('${errMsg}');</script>	
+        	<script>alert('${errMsg}');</script>	
         </c:if>
         
         <c:if test="${sessionScope.member_id ne null }">
-	    	 <script>swal('로그인된 상태 입니다.');
+	    	 <script>alert('로그인된 상태 입니다.');
 	    	 location.href='main';
 	    	 </script>	
   	    </c:if>

@@ -60,7 +60,7 @@
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="/member/main"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
-	        <li><a href="boardList.jsp">게시판</a></li> 
+	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>
 	    <!-- 로그인  되었을 때 view,로그인 되지 않았을 때 view -->
@@ -86,21 +86,26 @@
 	<div class="container">
 			<h2 class="mt-sm-5">게시판 글작성</h2>
 			<form action="/board/write" method="POST" name="write_form">
-				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" placeholder="${id}">
+				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" value="${id}" />
 				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
 				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content" id="board_content"></textarea>
 				<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
-				<input type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();"/>등록
+				<button type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
 			</form>
 	</div>
 	
 	
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('글쓰기 페이지 입니다.');
+    	 <script>
     	
     	 </script>	
     </c:if>
+    
+     <!-- 회원가입 실패했을 때 -->
+        <c:if test="${errMsg ne null}">
+        	<script>alert('${errMsg}');</script>	
+        </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--  sweetalert-->

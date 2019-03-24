@@ -17,16 +17,19 @@ public class BoardDaoImpl implements BoardDao {
 	
 	private static final String namespace="com.example.demo.board.mapper.BoardMapper";
 	
-	@Override
-	public int boardCount() throws Exception {
-		// TODO Auto-generated method stub
-		return sqlssion.selectOne(namespace+".boardList");	
-	}
-
+	//게시판 리스트 보기
 	@Override
 	public List<BoardVO> boardList() throws Exception {
 		
 		return sqlssion.selectList(namespace+".boardList");
+	}
+	
+	//게시판 글 삽입
+	@Override
+	public void boardInsert(BoardVO boardVO) throws Exception {
+		
+		 sqlssion.selectOne(namespace+".boardInsert",boardVO);
+		
 	}
 	
 	

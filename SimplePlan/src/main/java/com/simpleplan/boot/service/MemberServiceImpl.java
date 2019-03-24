@@ -16,19 +16,21 @@ public class MemberServiceImpl implements MemberService {
 	MemberDao memberDao;
 	
 	@Override
-	public MemberVO listAll() throws Exception {
-		
+	public MemberVO listAll() throws Exception {		
 		return memberDao.listAll();
 	}
 	
 	// 회원가입 
 	@Override
 	public void signUp(MemberVO memberVO) throws Exception {
-
-		 memberDao.signUp(memberVO);
-		
+		 memberDao.signUp(memberVO);	
 	}
-	
+	//중복 회원 확인 
+	@Override
+	public boolean signUpCheck(MemberVO memberVO) throws Exception {
+		boolean result = memberDao.signUpCheck(memberVO);
+		return result;
+	}
 	// 회원 로그인 체크
 	@Override
 	public boolean loginCheck(MemberVO memberVO, HttpSession session) throws Exception {
@@ -36,12 +38,7 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
-	@Override
-	public boolean signUpCheck(MemberVO memberVO) throws Exception {
-		boolean result = memberDao.signUpCheck(memberVO);
-		return result;
-	}
-
+	
 
 	
 

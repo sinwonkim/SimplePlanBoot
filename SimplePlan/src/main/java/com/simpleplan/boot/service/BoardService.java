@@ -6,8 +6,10 @@ import com.simpleplan.boot.domain.BoardVO;
 
 public interface BoardService {
 	
+	//게시판 리스트 보기
 	public List<BoardVO> boardList() throws Exception;
-
-	public void boardList(BoardVO boardVO);
+	
+	//게시판 글 등록
+	public void boardInsert(BoardVO boardVO) throws Exception;
 	
 }

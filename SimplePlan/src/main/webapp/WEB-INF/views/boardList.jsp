@@ -34,7 +34,7 @@
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
-	        <li><a href="boardList.jsp">게시판</a></li> 
+	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>
 	    <!-- 로그인  되었을 때 view,로그인 되지 않았을 때 view -->
@@ -44,11 +44,11 @@
 				<a href="#" class="dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true"
 					aria-expended="false">접속하기<span class="caret"></span></a>
 				<ul class="dropdown-menu" style="min-width: 80px;">
-					<li><a href="login">로그인</a></li> 
+					<li><a href="/member/login">로그인</a></li> 
 					<c:if test="${sessionScope.member_id ne null }">	
-					<li><a href="logOut">로그아웃</a></li>
+					<li><a href="/member/logOut">로그아웃</a></li>
 					</c:if> 
-					<li><a href="signUp">회원가입</a></li>
+					<li><a href="/member/signUp">회원가입</a></li>
 					
 				</ul>
 			</li>
@@ -90,10 +90,16 @@
 	
 	
     <!-- 로그인 된 상태일  때 -->
-    <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('게시판 입니다..');   	 </script>
- 
- 	
+    <c:if test="${sessionScope.member_id eq null }">
+    	 <script>alert('로그인 이후 이용하실 수 있습ㄴ다.');
+ 		  location.href='/member/main';
+ 		 </script>
+    </c:if>
+    <c:if test="${sessionScope.boardMsg ne null}">
+        	<script>alert('${sessionScope.boardMsg}');</script>	
+    </c:if>
+      <c:if test="${sessionScope.boardMsg ne null}">
+        	  <c:remove var="boardMsg" scope="session"/>
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>

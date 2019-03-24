@@ -126,7 +126,7 @@
     </c:if>
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>swal('로그인 되었습니다.');
+    	 <script>alert('로그인 되었습니다.');
     	 location.href='main';
     	 </script>	
     </c:if>

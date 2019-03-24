@@ -68,7 +68,6 @@ public class MemberController {
 	public String signUpPOST(@ModelAttribute MemberVO memberVO,HttpSession session, Model model) throws Exception {
 		boolean result = memberService.signUpCheck(memberVO);
 		String location ="";
-		System.out.println("회원가입 값 결과"+result);
 		if(result) { // 회원여부 존재하지 않으면  true 를 반환해서  회원가입 실행 
 			location ="main"; 
 			memberService.signUp(memberVO);	 // 실질적 회원가입 

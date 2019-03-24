@@ -14,7 +14,7 @@ public interface MemberService {
 	//중복 회원 확인 
 	public boolean signUpCheck(MemberVO memberVO) throws Exception;
 	
-	// 회원 로그인 체크 
+	//회원 로그인 체크 
 	public boolean loginCheck(MemberVO memberVO, HttpSession session) throws Exception;
 
 }

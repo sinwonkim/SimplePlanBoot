@@ -2,7 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.board.mapper.BoardMapper">
+	<!-- 게시판 리스트보기 -->
 	<select id="boardList" resultType="com.simpleplan.boot.domain.BoardVO">
 		select * from board	
 	</select>	
+	
+	<!-- 게시판 삽입 -->
+	<insert id="boardInsert">
+	<![CDATA[
+		INSERT INTO board (
+			board_writer
+			,board_title
+			,board_content
+		) VALUES (
+			#{board_writer}
+			,#{board_title}
+			,#{board_content}
+		)	
+	]]>
+	</insert>
 </mapper>

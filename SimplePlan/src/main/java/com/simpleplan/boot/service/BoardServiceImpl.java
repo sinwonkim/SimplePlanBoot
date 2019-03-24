@@ -15,12 +15,19 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Resource(name="com.simpleplan.boot.dao.BoardDaoImpl")
 	BoardDao boardDao;
-
+	
+	//게시판 리스트 보기
 	@Override
 	public List<BoardVO> boardList() throws Exception {
 		
 		return boardDao.boardList();
 	}
-
+	
+	//게시판 글 등록
+	@Override
+	public void boardInsert(BoardVO boardVO) throws Exception {
+		
+		boardDao.boardInsert(boardVO); // 삽입이라 return 값 없다.
+	}
 
 }
