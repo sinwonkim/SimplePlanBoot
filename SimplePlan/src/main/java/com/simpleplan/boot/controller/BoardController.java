@@ -4,6 +4,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.simpleplan.boot.domain.BoardVO;
 import com.simpleplan.boot.service.BoardService;
 
 @Controller
@@ -21,8 +23,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/write")
-	public String write(Model model, HttpSession session) throws Exception{
-		
+	public String write(Model model,BoardVO boardVO, HttpSession session) throws Exception{
+		boardService.boardList(boardVO);
 		String id = (String)session.getAttribute("member_id");
 		model.addAttribute("id", id);
 		System.out.println("session id 값은 입니다."+id);

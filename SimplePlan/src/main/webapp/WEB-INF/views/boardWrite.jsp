@@ -7,13 +7,39 @@
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="/resources/css/bootstrap.css">
+  <!-- Font Icon -->
+ <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
+<!-- Main css -->
+ <link rel="stylesheet" href="/resources/css/signUp.css">
+</head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
- <!-- Font Icon -->
-    <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
-<!-- Main css -->
-    <link rel="stylesheet" href="/resources/css/signUp.css">
-</head>
+    
+    <script type="text/javascript">
+	    function boardWrite() {
+	    	var form1 = document.write_form;
+	    	var title = document.getElementById('board_title');
+	    	var content = document.getElementById('board_content');
+	    	if(title.value == "") {
+	    		swal("제목을 입력해야 합니다.")
+	    		title.focus();
+	    		return;
+	    	}
+	    	if(content.value == "") {
+	    		swal("내용을 입력하세요")
+	    		content.focus();
+	    		return;
+	    	}
+	    	form1.submit();
+	    }
+	    
+	    
+	    /* 글 작성 취소  */
+	    function goPage() {
+	    	location.href="/board/list"; 
+	    	} 
+    </script>
+
 <body>
 <!-- Nav쪽 -->
 	<nav class="navbar navbar-default navbar-backdefault">
@@ -32,7 +58,7 @@
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
-	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
+	        <li><a class="navbar-brand " href="/member/main"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="boardList.jsp">게시판</a></li> 
 	      </ul>
@@ -59,13 +85,14 @@
 	<!-- 게시판 글쓰기  -->
 	<div class="container">
 			<h2 class="mt-sm-5">게시판 글작성</h2>
-			<form action="/board/write" method="POST">
-				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" placeholder="${id}">
-				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" placeholder="제목">
-				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content"></textarea>
-				<button type="submit" class="btn btn-primary" style="margin-left: 45%;">등록</button>
+			<form action="/board/write" method="POST" name="write_form">
+				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" placeholder="${id}">
+				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
+				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content" id="board_content"></textarea>
+				<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
+				<input type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();"/>등록
 			</form>
-		</div>
+	</div>
 	
 	
     <!-- 로그인 된 상태일  때 -->
@@ -76,5 +103,6 @@
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--  sweetalert-->
 </body>
 </html>

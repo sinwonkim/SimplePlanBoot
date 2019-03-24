@@ -20,12 +20,12 @@
 	        var id = document.getElementById('member_id');
 	        var password = document.getElementById('member_password');
 	        if(id.value == ""){
-	            alert("아이디를 입력해야 합니다.")
+	        	swal("아이디를 입력해야 합니다.")
 	            id.focus();
 	            return;
 	        }
 	        if(password.value == "") {
-	            alert("패스워드를 입력해야 합니다.")
+	        	swal("패스워드를 입력해야 합니다.")
 	            password.focus();
 	            return;
 	        }
@@ -55,7 +55,7 @@
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
-	        <li><a href="boardList.jsp">게시판</a></li> 
+	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>
 	    <!-- 로그인  되었을 때 view,로그인 되지 않았을 때 view -->
@@ -126,11 +126,12 @@
     </c:if>
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');
+    	 <script>swal('로그인 되었습니다.');
     	 location.href='main';
     	 </script>	
     </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
+ <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- sweetalert -->
 </body>
 </html>

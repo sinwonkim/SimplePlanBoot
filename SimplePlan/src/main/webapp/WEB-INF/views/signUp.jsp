@@ -22,27 +22,27 @@
 	        var email = document.getElementById('member_email');
 	        var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 	        if(id.value == ""){
-	            alert("아이디를 입력해야 합니다.")
+	        	swal("아이디를 입력해야 합니다.")
 	            id.focus();
 	            return;
 	        }
 	        if(password.value == "") {
-	            alert("패스워드를 입력해야 합니다.")
+	        	swal("패스워드를 입력해야 합니다.")
 	            password.focus();
 	            return;
 	        }
 	        if(name.value == "") {
-	            alert("이름을 입력해야 합니다.")
+	        	swal("이름을 입력해야 합니다.")
 	            name.focus();
 	            return;
 	        }
 	        if(email.value == "") {
-	            alert("이메일을 입력해야 합니다.")
+	        	swal("이메일을 입력해야 합니다.")
 	            email.focus();
 	            return;
 	        }
 	        if(exptext.test(email.value)==false) {
-	        	alert("이메일형식이 올바르지 않습니다. ex)아이디@naver.com")
+	        	swal("이메일형식이 올바르지 않습니다. ex)아이디@naver.com")
 	        	email.focus();
 	        	return false;
 	        }
@@ -52,9 +52,9 @@
     	 // 회원가입완료 시 문구 
         var msg = "${msg}";
         if (msg === "SIGNUP") {
-        	alert("회원가입이 완료 되었습니다. 로그인 해주세요.");
+        	swal("회원가입이 완료 되었습니다. 로그인 해주세요.");
         } else if (msg === "FAIL") {
-        	alert("아이디와 비밀번호를 확인해주세요")
+        	swal("아이디와 비밀번호를 확인해주세요")
         }
     </script>
 </head>
@@ -78,7 +78,7 @@
 	      <ul class="nav navbar-nav" >
 	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
-	        <li><a href="boardList.jsp">게시판</a></li> 
+	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>
 	    <!-- 로그인  되었을 때 view,로그인 되지 않았을 때 view -->
@@ -150,17 +150,18 @@
         
         <!-- 회원가입 실패했을 때 -->
         <c:if test="${errMsg ne null}">
-        	<script>alert('${errMsg}');</script>	
+        	<script>swal('${errMsg}');</script>	
         </c:if>
         
         <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인된 상태 입니다.');
-    	 location.href='main';
-    	 </script>	
-    </c:if>
+	    	 <script>swal('로그인된 상태 입니다.');
+	    	 location.href='main';
+	    	 </script>	
+  	    </c:if>
 <script
   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
  <script src="/resources/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- sweetalert -->
 </body>
 </html>
