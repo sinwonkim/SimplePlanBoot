@@ -32,6 +32,8 @@ DB: MySQL
 ---
 
 ## Trouble Shooting
+
+[에러]
 <div>
 <img src="https://i.imgur.com/VBoXQmg.png">
 </div>
@@ -49,13 +51,14 @@ Profiles 부분에 있는 pom.xml 삭제 (여기에 내 경우 안적혀 있었�
 
 <br/>
 
+---
+
 [에러]
 Launching springBoot -Aplication' has encountered a problem
 The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpath, does not exist
 
 [원인]
 jstl jar 파일이 존재하지 않아서 내꺼 프로젝트 자체를 인식못함 
-
 
 [해결]
 jstl jar 필요 라이브러리 추가  + 프로젝트 오른쪽 클린  clean   , Maven 클릭  Maven Clean로 해결 
