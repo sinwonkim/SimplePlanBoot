@@ -121,6 +121,11 @@ MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과
   <img src="blob:https://imgur.com/f82676f2-2a41-462f-93cc-856156322570">
 </div>
 
+[해결]
+<div>
+   <img src="https://i.imgur.com/OgHRKHo.png">
+</div>
+
 참고사항
 ---
 1인개발 3월 15일부터 현재 진행중 입니다.
