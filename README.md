@@ -54,6 +54,7 @@ Profiles 부분에 있는 pom.xml 삭제 (여기에 내 경우 안적혀 있었�
 ---
 
 [에러]
+
 Launching springBoot -Aplication' has encountered a problem
 The archive: C:/Users/사용자/Desktop/jstl.jar wh is referenced by the classpath, does not exist
 
@@ -79,7 +80,10 @@ mybatis 연동이 제대로 되지 않아 있었음  mybatis연동하는 방식 
 <img src="https://i.imgur.com/ErgEwT4.png">  
 </div>
 
+기존에는 3번 방식으로 진행하다가 인터페이스의 문제가 발생하여 
+1번 방식으로 변경 하였다. 
 매퍼스캔방식 안하고  XML만을 이용해서 SQL문을 설정하는 방식으로 하였다. 
+
 
 MyBatis를 이용할때 SQL문을 사용하는 방식은 크게 다음과 
 같이 나눠짐
