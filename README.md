@@ -129,6 +129,7 @@ boardService.boardInsert() 를 통해 폼에서 작성된 writer와, title,conte
 거기서 writer 경우 not null 로 설정 해놨다. 난 단순히 write 페이지를 보려고 했는데  그러한 이유로 not null이 발생해서 에러가 발생 
 
 
+
 [해결]
 <div>
    <img src="https://i.imgur.com/OgHRKHo.png">
