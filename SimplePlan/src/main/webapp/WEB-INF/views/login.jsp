@@ -34,6 +34,14 @@
     	
    
     </script>
+    
+    <!-- 로그인 된 상태일  때 -->
+    <c:if test="${sessionScope.member_id ne null }">
+    	 <script>
+	    	 alert('로그인  상태 입니다..');
+	    	 location.href='main';
+    	 </script>	
+    </c:if>
 </head>
 <body>
 <!-- Nav쪽 -->
@@ -124,14 +132,9 @@
         </section>
     </div>
     </c:if>
-    <!-- 로그인 된 상태일  때 -->
-    <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');
-    	 location.href='main';
-    	 </script>	
-    </c:if>
+    
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
- <script src="/resources/js/bootstrap.min.js"></script>
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- sweetalert -->
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- sweetalert -->
 </body>
 </html>

@@ -7,8 +7,15 @@
 		select * from board	
 	</select>	
 	
+	<select id="boardDeatail" parameterType="int" resultType="com.simpleplan.boot.domain.BoardVO">
+	<![CDATA[
+		select * from board where board_bno = #{board_bno}
+	]]>
+	</select>
+	<!--게시판 상세보기  -->
+	
 	<!-- 게시판 삽입 -->
-	<insert id="boardInsert">
+	<insert id="boardInsert" parameterType="com.simpleplan.boot.domain.BoardVO">
 	<![CDATA[
 		INSERT INTO board (
 			board_writer

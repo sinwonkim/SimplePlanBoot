@@ -35,10 +35,22 @@
 	    
 	    
 	    /* 글 작성 취소  */
-	    function goPage() {
-	    	location.href="/board/list"; 
-	    	} 
+	    function goPage() {location.href="/board/list";} 
     </script>
+    
+     <!-- 로그인 된 상태일  때 -->
+	<c:if test="${sessionScope.member_id ne null }">
+		<script>
+			
+		</script>
+	</c:if>
+	
+	<!-- 회원가입 실패했을 때 -->
+	<c:if test="${errMsg ne null}">
+		<script>
+			alert('${errMsg}');
+		</script>
+	</c:if>
 
 <body>
 <!-- Nav쪽 -->
@@ -94,20 +106,8 @@
 			</form>
 	</div>
 	
-	
-    <!-- 로그인 된 상태일  때 -->
-    <c:if test="${sessionScope.member_id ne null }">
-    	 <script>
-    	
-    	 </script>	
-    </c:if>
-    
-     <!-- 회원가입 실패했을 때 -->
-        <c:if test="${errMsg ne null}">
-        	<script>alert('${errMsg}');</script>	
-        </c:if>
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
- <script src="/resources/js/bootstrap.min.js"></script>
- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--  sweetalert-->
+<script src="/resources/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!--  sweetalert-->
 </body>
 </html>

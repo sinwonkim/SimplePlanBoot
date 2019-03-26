@@ -23,11 +23,20 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.boardList();
 	}
 	
+	//게시판 리스트 상세보기
+	@Override
+	public BoardVO boardDetail(int board_bno) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDao.boardDetail(board_bno);
+	}
+	
 	//게시판 글 등록
 	@Override
 	public void boardInsert(BoardVO boardVO) throws Exception {
 		
 		boardDao.boardInsert(boardVO); // 삽입이라 return 값 없다.
 	}
+
+	
 
 }

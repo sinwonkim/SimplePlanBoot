@@ -57,6 +57,20 @@
         	swal("아이디와 비밀번호를 확인해주세요")
         }
     </script>
+
+	<!-- 회원가입 실패했을 때 -->
+	<c:if test="${errMsg ne null}">
+		<script>
+			alert('${errMsg}');
+		</script>
+	</c:if>
+	
+	<c:if test="${sessionScope.member_id ne null }">
+		<script>
+			alert('로그인된 상태 입니다.');
+			location.href = 'main';
+		</script>
+	</c:if>
 </head>
 <body>
 <!-- Nav쪽 -->
@@ -125,10 +139,6 @@
                                 <label for="member_email"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="email" name="member_email" id="member_email" placeholder="이메일"/>
                             </div>
-                          <!--   <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
-                            </div> -->
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
@@ -148,16 +158,7 @@
         </div>
         </c:if>
         
-        <!-- 회원가입 실패했을 때 -->
-        <c:if test="${errMsg ne null}">
-        	<script>alert('${errMsg}');</script>	
-        </c:if>
-        
-        <c:if test="${sessionScope.member_id ne null }">
-	    	 <script>alert('로그인된 상태 입니다.');
-	    	 location.href='main';
-	    	 </script>	
-  	    </c:if>
+       
 <script
   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
  <script src="/resources/js/bootstrap.min.js"></script>

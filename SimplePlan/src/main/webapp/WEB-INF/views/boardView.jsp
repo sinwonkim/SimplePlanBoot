@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 <!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
+    
+    <!-- 로그인 된 상태일  때 -->
+    <c:if test="${sessionScope.member_id ne null }">
+    	 <script>
+	    	 alert('로그인 되었습니다.');
+	    	 location.href='main';
+    	 </script>	
+    </c:if>
+    
 </head>
 <body>
 <!-- Nav쪽 -->
@@ -57,12 +66,7 @@
 	</nav>
 	
 	
-    <!-- 로그인 된 상태일  때 -->
-    <c:if test="${sessionScope.member_id ne null }">
-    	 <script>alert('로그인 되었습니다.');
-    	 location.href='main';
-    	 </script>	
-    </c:if>
+    
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
  <script src="/resources/js/bootstrap.min.js"></script>
 </body>

@@ -12,7 +12,7 @@
  	<!-- Font Icon -->
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<!-- Main css -->
-    <link rel="stylesheet" href="/resources/css/signUp.css">
+    <!-- <link rel="stylesheet" href="/resources/css/signUp.css"> -->
     
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id eq null }">
@@ -29,6 +29,10 @@
       <c:if test="${sessionScope.boardMsg ne null}">
          <c:remove var="boardMsg" scope="session"/>
     </c:if>
+    <script>
+     /* 글 작성 취소  */
+	    function goPage() {location.href="/board/list";}
+	    </script>
 </head>
 <body>
 	<!-- Nav쪽 -->
@@ -48,11 +52,10 @@
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
-	        <li><a class="navbar-brand " href="/member/main"  style="margin-left:0px;">Home</a></li> 
+	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li> 
 	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>
-		
 		<!-- nav DropDownBar -->  
 	    <ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
@@ -72,36 +75,23 @@
 	
 	<!-- 게시판 -->
 	<div class="container">
-	    <form id="boardForm" name="boardForm" method="post">
-	        <table class="table table-striped table-hover">
-	            <thead>
-	                <tr>
-	                    <th>번호</th>
-	                    <th>제목</th>
-	                    <th>내용</th>
-	                    <th>작성자</th>
-	                    <th>글작성</th>
-	                </tr>
-	            </thead>
-	            <tbody>	    			
-	                <c:forEach var="list" items="${list}" varStatus="status">
-					<tr>
-						<td>${list.board_bno}</td>
-						<td><b onclick="location.href='/board/detail/${list.board_bno}'">${list.board_title}</b></td>
-						<td>${list.board_content}</td>
-						<td>${list.board_writer}</td>
-						<td>${list.board_regdate}</td>
-					</tr>
-					</c:forEach>
-	            </tbody>
-	        </table> 
-	        <div>            
-	            <a href="/board/write"  class="btn btn-success">글쓰기</a>	                     
-	        </div>
-	    </form>
+		<form action="/board/upDate" method="post">
+			<div class="form-group">
+				<label for="subject">제목</label>
+				<input type="text" class="form-control" id="subject" name="subject" value="${detail.board_title}">
+			</div>
+			<div class="form-group">
+				<label for="content">내용</label>
+				<textarea class="form-control" id="content" name="content" rows="3">${detail.board_content}</textarea>
+			</div>
+			<input type="hidden" name="bno" value="${bno}" />
+			<button type="submit" class="btn btn-success">수정</button>
+		</form>
 	</div>
-	
-<script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+
+
+
+	<script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 </body>
 </html>

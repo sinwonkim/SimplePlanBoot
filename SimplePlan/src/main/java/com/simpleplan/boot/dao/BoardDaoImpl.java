@@ -24,6 +24,13 @@ public class BoardDaoImpl implements BoardDao {
 		return sqlssion.selectList(namespace+".boardList");
 	}
 	
+	//게시판 상세 보기
+	@Override
+	public BoardVO boardDetail(int board_bno) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlssion.selectOne(namespace+".boardDeatail",board_bno);
+	}
+	
 	//게시판 글 삽입
 	@Override
 	public void boardInsert(BoardVO boardVO) throws Exception {
@@ -31,6 +38,8 @@ public class BoardDaoImpl implements BoardDao {
 		 sqlssion.selectOne(namespace+".boardInsert",boardVO);
 		
 	}
+
+	
 	
 	
 }
