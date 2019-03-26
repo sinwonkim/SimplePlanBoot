@@ -7,12 +7,26 @@
 		select * from board	
 	</select>	
 	
+	<!--게시판 상세보기  -->
 	<select id="boardDeatail" parameterType="int" resultType="com.simpleplan.boot.domain.BoardVO">
 	<![CDATA[
 		select * from board where board_bno = #{board_bno}
 	]]>
 	</select>
-	<!--게시판 상세보기  -->
+	
+	<!--게시판 글 수정  -->
+	<update id="boardUpdate" parameterType="com.simpleplan.boot.domain.BoardVO">
+		update board
+		set
+		<if test="board_title != null">
+		board_title = #{board_title}
+		</if>
+		<if test="board_title != null and board_content !=null">,</if>
+		<if test="board_content != null">
+			board_content = #{board_content}
+		</if>
+		where board_bno = #{board_bno}
+	</update>
 	
 	<!-- 게시판 삽입 -->
 	<insert id="boardInsert" parameterType="com.simpleplan.boot.domain.BoardVO">

@@ -32,7 +32,7 @@
     <script>
      /* 글 작성 취소  */
 	    function goPage() {location.href="/board/list";}
-	    </script>
+	 </script>
 </head>
 <body>
 	<!-- Nav쪽 -->
@@ -75,16 +75,17 @@
 	
 	<!-- 게시판 -->
 	<div class="container">
-		<form action="/board/upDate" method="post">
+		<form action="/board/update" method="POST">
 			<div class="form-group">
-				<label for="subject">제목</label>
-				<input type="text" class="form-control" id="subject" name="subject" value="${detail.board_title}">
+				<label for="board_title">제목</label>
+				<input type="text" class="form-control" id="board_title" name="board_title" value="${detail.board_title}">
 			</div>
 			<div class="form-group">
-				<label for="content">내용</label>
-				<textarea class="form-control" id="content" name="content" rows="3">${detail.board_content}</textarea>
+				<label for="board_content">내용</label>
+				<textarea class="form-control" id="board_content" name="board_content" rows="3">${detail.board_content}</textarea>
 			</div>
-			<input type="hidden" name="bno" value="${bno}" />
+			<input type="hidden" name="board_bno" value="${detail.board_bno}" />
+			<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="돌아가기" onclick="goPage();">취소</button>
 			<button type="submit" class="btn btn-success">수정</button>
 		</form>
 	</div>

@@ -13,4 +13,7 @@ public interface BoardDao {
 	
 	//게시판 글 삽입
 	public void boardInsert(BoardVO boardVO) throws Exception;
+	
+	//게시판 글 수정
+	public void boardUpdate(BoardVO boardVO) throws Exception;
 }

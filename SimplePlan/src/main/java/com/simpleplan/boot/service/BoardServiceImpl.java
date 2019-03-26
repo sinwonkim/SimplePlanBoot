@@ -37,6 +37,14 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.boardInsert(boardVO); // 삽입이라 return 값 없다.
 	}
 
+	//게시판 글 수정
+	@Override
+	public void boardUpdate(BoardVO boardVO) throws Exception {
+		
+		boardDao.boardUpdate(boardVO);
+		
+	}
+
 	
 
 }

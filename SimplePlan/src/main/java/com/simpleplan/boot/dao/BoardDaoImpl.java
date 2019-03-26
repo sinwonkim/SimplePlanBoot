@@ -38,6 +38,14 @@ public class BoardDaoImpl implements BoardDao {
 		 sqlssion.selectOne(namespace+".boardInsert",boardVO);
 		
 	}
+	
+	//게시판 글 수정
+	@Override
+	public void boardUpdate(BoardVO boardVO) throws Exception {
+		
+		sqlssion.selectOne(namespace+".boardUpdate",boardVO);
+		
+	}
 
 	
 	

@@ -40,16 +40,25 @@ public class BoardController {
 		return "boardDetail";
 	}
 	
-	// 게시판 글 수정 
-	@RequestMapping("/update/{board_bno}")
-	public String update(@PathVariable int board_bno, Model model) throws Exception {
+	// 게시판 글 수정  폼 보기
+	@RequestMapping(value = "/update/{board_bno}", method = RequestMethod.GET)
+	public String updateGet(@PathVariable int board_bno, Model model) throws Exception {
+		model.addAttribute("detail", boardService.boardDetail(board_bno));
 		
 		return "boardUpdate";
 	}
-
+	
+	//게시판 글 수정 하기 
+	@RequestMapping(value = "/update", method= RequestMethod.POST)
+	public String updatePost(BoardVO boardVO) throws Exception {
+		boardService.boardUpdate(boardVO);
+		
+		
+		return "redirect:/board/detail/"+boardVO.getBoard_bno();
+	}
 	
 	// 게시판 글 등록 보기
-	@RequestMapping(value="/write" , method = RequestMethod.GET)
+	@RequestMapping(value = "/write" , method = RequestMethod.GET)
 	public String write(Model model,HttpSession session) throws Exception {
 		String id = (String)session.getAttribute("member_id");
 		model.addAttribute("id", id);
@@ -65,14 +74,5 @@ public class BoardController {
 		session.setAttribute("boardMsg", "글이 등록되었습니다.");
 				
 		return "redirect:/board/list";
-	}
-	
-	
-	
-	// 게시판 글 수정
-	@RequestMapping(value="/modify", method = RequestMethod.GET)
-	public String modify() throws Exception {
-		
-		return "boardModify";
 	}
 }
