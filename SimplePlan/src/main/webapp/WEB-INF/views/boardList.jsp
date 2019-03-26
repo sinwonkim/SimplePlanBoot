@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
-    
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id eq null }">
     	 <script>

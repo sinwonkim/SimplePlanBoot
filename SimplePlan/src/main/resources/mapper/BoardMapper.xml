@@ -42,4 +42,12 @@
 		)	
 	]]>
 	</insert>
+	
+	<!-- 게시판 삭제 -->
+	<delete id="boardDelete" parameterType="int">
+	<![CDATA[
+		delete from board where board_bno = #{board_bno}
+	]]>
+	
+	</delete>
 </mapper>

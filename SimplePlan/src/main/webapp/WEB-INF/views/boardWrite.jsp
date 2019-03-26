@@ -100,7 +100,7 @@
 			<form action="/board/write" method="POST" name="write_form">
 				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" value="${id}" />
 				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
-				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content" id="board_content"></textarea>
+				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content" id="board_content" placeholder="내용"></textarea>
 				<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
 				<button type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
 			</form>

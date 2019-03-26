@@ -46,6 +46,13 @@ public class BoardDaoImpl implements BoardDao {
 		sqlssion.selectOne(namespace+".boardUpdate",boardVO);
 		
 	}
+	
+	//게시판 글 삭제
+	@Override
+	public void boardDelete(int board_bno) throws Exception {
+		
+		sqlssion.selectOne(namespace+".boardDelete",board_bno);
+	}
 
 	
 	

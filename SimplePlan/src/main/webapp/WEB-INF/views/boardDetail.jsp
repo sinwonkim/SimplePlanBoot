@@ -77,25 +77,30 @@
 	<div class="container">
 		<form action="/board/modify" id="boardForm" name="boardForm" method="GET">
 			<div class="form-group">
-				<label>제목</label>
-				<p>${detail.board_title}</p>
-			</div>
-			<div class="form-group">
 				<label>작성자</label>
 				<p>${detail.board_writer}</p>
 			</div>
 			<div class="form-group">
-				<label>작성날짜</label>
-				<p>${detail.board_regdate}</p>
+				<label>제목</label>
+				<p>${detail.board_title}</p>
 			</div>
 			<div class="form-group">
 				<label>내용</label>
 				<p>${detail.board_content}</p>
 			</div>
+			
+			<div class="form-group">
+				<label>작성날짜</label>
+				<p>${detail.board_regdate}</p>
+			</div>
+			
 		</form>
-		<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="돌아가기" onclick="goPage();">취소</button>
+		<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
+		<c:if test="${sessionScope.member_id eq detail.board_writer}">
 		<button type="button" class="btn btn-success" onclick="location.href='/board/update/${detail.board_bno}'">글 수정</button>
-		
+		<button type="button" class="btn btn-success" onclick="location.href='/board/delete/${detail.board_bno}'">글 삭제</button>
+		</c:if>
+				
 	</div>
 	
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>

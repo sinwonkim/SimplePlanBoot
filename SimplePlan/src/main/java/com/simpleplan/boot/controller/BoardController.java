@@ -56,6 +56,12 @@ public class BoardController {
 		
 		return "redirect:/board/detail/"+boardVO.getBoard_bno();
 	}
+	// 게시판 글 삭제하기
+	@RequestMapping(value = "/delete/{board_bno}", method = RequestMethod.GET)
+	public String delete(@PathVariable int board_bno) throws Exception {
+		boardService.boardDelete(board_bno);
+		return "redirect:/board/list";
+	}
 	
 	// 게시판 글 등록 보기
 	@RequestMapping(value = "/write" , method = RequestMethod.GET)
