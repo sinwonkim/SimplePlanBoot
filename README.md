@@ -7,9 +7,13 @@ If you do using this you can easy to make a plan ^_^
 Spring boot(2.1.3)+Maven+MyBatis+Mysql
 
 Front End: HTML, CSS, JavaScript, BootStrap
+
 Back End: JAVA
-library: JST
+
+library: JSTl
+
 API : weather API,ck editor
+
 DB: MySQL
 
 ---
