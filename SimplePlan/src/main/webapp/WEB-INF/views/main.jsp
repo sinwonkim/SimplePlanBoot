@@ -14,7 +14,7 @@
  a:link { text-decoration: none;}
 </style>
 </head>
-<body>
+<body onload="printClock()">
 
 
 		<!-- Nav쪽 -->
@@ -58,11 +58,10 @@
 	  </div>
 	</nav>
 
-	<!-- javascript  -->
-	  <div class="js-clock">
-           <h1>00:00</h1>
-      </div>
-       <div class="js-weather"></div>
+		<!-- javascript  -->
+      <div class="js-weather"></div>
+      <div class="js-Clock" id="clock">
+	  </div>
        <form class="js-form form">
             <input type = "text" placeholder="What is your name?"/>
        </form>
@@ -74,7 +73,7 @@
        
        </ol>
        
-        <script src="/resources/js/clock.js"></script>
+        <script src="/resources/js/printClock.js"></script>
         <script src="/resources/js/gretting.js"></script>
         <script src="/resources/js/todo.js"></script>
         <script src="/resources/js/bg.js"></script>

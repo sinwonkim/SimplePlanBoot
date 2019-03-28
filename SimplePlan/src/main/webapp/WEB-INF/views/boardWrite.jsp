@@ -14,27 +14,19 @@
 </head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
-    
+    <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
     <script type="text/javascript">
 	    function boardWrite() {
 	    	var form1 = document.write_form;
-	    	var title = document.getElementById('board_title');
-	    	var content = document.getElementById('board_content');
+	    	var title = document.getElementById('board_title');	
 	    	if(title.value == "") {
 	    		swal("제목을 입력해야 합니다.")
 	    		title.focus();
 	    		return;
 	    	}
-	    	if(content.value == "") {
-	    		swal("내용을 입력하세요")
-	    		content.focus();
-	    		return;
-	    	}
-	    	form1.submit();
-	    }
-	    
-	    
-	    /* 글 작성 취소  */
+	    	form1.submit(); 
+	    }	    
+	    /* 글 작성 취소  */	
 	    function goPage() {location.href="/board/list";} 
     </script>
     
@@ -96,12 +88,15 @@
 	
 	<!-- 게시판 글쓰기  -->
 	<div class="container">
-			<h2 class="mt-sm-5">게시판 글작성</h2>
+			<h2 class="mt-sm-5">글 작성</h2>
 			<form action="/board/write" method="POST" name="write_form">
 				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" value="${id}" />
 				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
-				<textarea class="form-control w-50 mb-sm-1" rows="10" name="board_content" id="board_content" placeholder="내용"></textarea>
-				<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
+				 <textarea name="board_content" class="ckeditor" rows="20" cols="50" name="board_content" id="board_content" placeholder="내용" ></textarea>
+         		<script>
+                        CKEDITOR.replace( 'board_content' );
+                </script>
+                <button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
 				<button type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
 			</form>
 	</div>

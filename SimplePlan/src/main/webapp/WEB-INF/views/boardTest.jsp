@@ -7,6 +7,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="/resources/css/bootstrap.css">
 <title>Insert title here</title>
+  <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
 <script type="text/javascript">
 	    function boardWrite() {
 	    	var form1 = document.write_form;
@@ -31,28 +32,19 @@
     </script>
 </head>
 <body>
-<!-- 게시판 -->
-	<div class="container">
-		<form action="/board/modify" id="boardForm" name="boardForm" method="post">
-			<div class="form-group">
-				<label>제목</label>
-				<p>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</p>
-			</div>
-			<div class="form-group">
-				<label>작성자</label>
-				<p>${detail.board_writer}</p>
-			</div>
-			<div class="form-group">
-				<label>작성날짜</label>
-				<p>${detail.board_regdate}</p>
-			</div>
-			<div class="form-group">
-				<label>내용</label>
-				<p>${detail.board_content}</p>
-			</div>
-			<button type="submit" class="btn btn-success">글 수정</button>
-		</form>
-	</div>
+
+
+
+
+
+           
+              
+                <textarea name="editor1" style="width:100%; border:1;overflow:visible;text-overflow:ellipsis; display: block;" rows=30 ></textarea>
+         		<script>
+                        CKEDITOR.replace( 'editor1' );
+                </script>
+        
+
 
 <script src="/resources/js/bootstrap.min.js"></script>
 </body>

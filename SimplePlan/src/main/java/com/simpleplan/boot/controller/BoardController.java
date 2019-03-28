@@ -78,7 +78,7 @@ public class BoardController {
 	public String write(Model model,BoardVO boardVO, HttpSession session) throws Exception{	
 		boardService.boardInsert(boardVO); // 게시판 글 등록
 		session.setAttribute("boardMsg", "글이 등록되었습니다.");
-				
+		System.out.println("["+boardVO.getBoard_content()+"]");		
 		return "redirect:/board/list";
 	}
 }

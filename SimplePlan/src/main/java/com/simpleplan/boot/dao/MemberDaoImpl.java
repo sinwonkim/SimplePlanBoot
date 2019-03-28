@@ -16,7 +16,7 @@ public class MemberDaoImpl implements MemberDao {
 	// 
 	@Override
 	public MemberVO listAll() throws Exception {
-		// TODO Auto-generated method stub
+		
 		return sqlssion.selectOne(namespace+".listAll");
 	}
 	// 회원가입
@@ -26,18 +26,16 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	// 회원 로그인 확인
 	@Override
-	public boolean loginCheck(MemberVO memberVO) throws Exception {
+	public String loginCheck(MemberVO memberVO) throws Exception {
 		String name = sqlssion.selectOne(namespace+".loginCheck", memberVO);
-		return (name == null) ? false : true;
+		
+		return name;
 	}	
 	// 회원가입 중복 체크 
 	@Override
-	public boolean signUpCheck(MemberVO memberVO) throws Exception {
+	public String signUpCheck(MemberVO memberVO) throws Exception {
 		String name = sqlssion.selectOne(namespace+".signUpCheck",memberVO);
-		return (name == null) ? true : false;
+		return name;
 	}
-	
-
-
-	
+		
 }

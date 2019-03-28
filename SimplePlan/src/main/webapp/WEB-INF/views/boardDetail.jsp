@@ -93,7 +93,6 @@
 				<label>작성날짜</label>
 				<p>${detail.board_regdate}</p>
 			</div>
-			
 		</form>
 		<button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
 		<c:if test="${sessionScope.member_id eq detail.board_writer}">

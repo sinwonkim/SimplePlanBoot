@@ -40,7 +40,7 @@
 			,#{board_title}
 			,#{board_content}
 		)	
-	]]>
+			]]>
 	</insert>
 	
 	<!-- 게시판 삭제 -->

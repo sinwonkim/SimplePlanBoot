@@ -32,12 +32,13 @@ public class MemberController {
 	// 로그인 처리 
 	@RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
 	public String loginCheck(@ModelAttribute MemberVO memberVO, HttpSession session) throws Exception {
-		boolean result = memberService.loginCheck(memberVO, session);	
+		boolean result = memberService.loginCheck(memberVO);	
 		String location = "";
 		if (result) { // true일 경우 세션에 등록 
 			// 세션 변수 등록 
 			session.setAttribute("member_id", memberVO.getMember_id());
 			session.setAttribute("member_name", memberVO.getMember_name());
+			System.out.println("sessison >>>>>>>>>>>>"+session.getAttribute("member_id"));
 		}
 		if (result == true) {// 로그인 성공
 			location = "main";
@@ -49,6 +50,7 @@ public class MemberController {
 		return "redirect:"+location;
 	}
 	
+	// 로그아웃
 	@RequestMapping(value = "/logOut", method = RequestMethod.GET)
 	public String loignOut(HttpSession session) {
 		

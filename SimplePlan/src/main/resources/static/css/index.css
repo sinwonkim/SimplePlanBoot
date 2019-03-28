@@ -60,6 +60,16 @@ button {
     z-index: -1;
     animation: fadeIn 0.5s linear;
 }
+.js-Clock{
+	margin:auto;
+	width:600px; 
+	height:250px;
+	line-height:250px;
+	color:#666;
+	font-size:100px;
+	text-align:center;
+	
+}
 .js-clock{
 	text-align: right;
 	margin-right: 20px;

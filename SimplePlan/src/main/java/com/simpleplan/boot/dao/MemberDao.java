@@ -10,10 +10,10 @@ public interface MemberDao {
 	void signUp(MemberVO memberVO) throws Exception;
 	
 	// 회원중복 아이디 체크 
-	boolean signUpCheck(MemberVO memberVO) throws Exception;
+	String signUpCheck(MemberVO memberVO) throws Exception;
 	
 	// 회원 로그인 체크
-	boolean loginCheck(MemberVO vo) throws Exception;
+	String loginCheck(MemberVO vo) throws Exception;
 	
 	
 }
