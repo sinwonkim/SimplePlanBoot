@@ -6,17 +6,32 @@ If you do using this you can easy to make a plan ^_^
 ---
 ## 메인화면
 <div>
-<img src = "https://i.imgur.com/be3DjCB.jpg">
+<img src = "https://i.imgur.com/s8StWaB.jpg">
 </div>
   
 ## 로그인
 <div>
-<img src = "https://i.imgur.com/txqDb1o.png">
+<img src = "https://i.imgur.com/OPmbV2L.png">
 </div>
 
 ## 회원가입
 <div>
-<img src = "https://i.imgur.com/azeVXKf.png">
+<img src = "https://i.imgur.com/ozy175Q.png">
+</div>
+
+## 게시판
+<div>
+<img src = "https://i.imgur.com/tOLYTtZ.png">
+</div>
+
+## 게시판 글 작성
+<div>
+<img src = "https://i.imgur.com/5uxDPab.png">
+</div>
+
+## 게시판 글 수정
+<div>
+<img src = "https://i.imgur.com/KY15J2J.png">
 </div>
 
 
