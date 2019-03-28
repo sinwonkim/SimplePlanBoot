@@ -49,8 +49,9 @@ API : weather API,ck editor
 
 ## 게시판 글 수정
 <div>
-<img src = "https://i.imgur.com/KY15J2J.png">
+<img src = "https://i.imgur.com/sZUE2QB.png">
 </div>
+
 
 
 
