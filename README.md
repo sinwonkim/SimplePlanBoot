@@ -2,7 +2,17 @@
 생각의 정리가 필요할 때 어떠한 주제나 생각에 관하여 다른 사람의 의견을 물어보고  싶을때 이용 하세요.
 
 If you do using this you can easy to make a plan ^_^
+---
+## 환경
+Spring boot(2.1.3)+Maven+MyBatis+Mysql
 
+Front End: HTML, CSS, JavaScript, BootStrap
+Back End: JAVA
+library: JST
+API : weather API,ck editor
+DB: MySQL
+
+---
 ---
 ## 메인화면
 <div>
@@ -35,16 +45,7 @@ If you do using this you can easy to make a plan ^_^
 </div>
 
 
----
-## 기술스택
-Spring boot(2.1.3)+Maven+MyBatis+Mysql
 
-Front End: HTML, CSS, JavaScript, BootStrap
-Back End: JAVA
-library: JSTL
-DB: MySQL
-
----
 
 ## Trouble Shooting
 
