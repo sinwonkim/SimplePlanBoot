@@ -4,7 +4,11 @@
 If you do using this you can easy to make a plan ^_^
 ---
 ## 환경
-Spring boot(2.1.3)+Maven+MyBatis+Mysql
+FrameWork : Spring boot(2.1.3)
+
+Build : Maven
+
+DB: MySQL+MyBatis
 
 Front End: HTML, CSS, JavaScript, BootStrap
 
@@ -14,7 +18,7 @@ library: JSTl
 
 API : weather API,ck editor
 
-DB: MySQL
+
 
 ---
 ---
