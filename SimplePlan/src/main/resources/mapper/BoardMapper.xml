@@ -31,23 +31,61 @@
 	<!-- 게시판 삽입 -->
 	<insert id="boardInsert" parameterType="com.simpleplan.boot.domain.BoardVO">
 	<![CDATA[
-		INSERT INTO board (
-			board_writer
-			,board_title
-			,board_content
-		) VALUES (
-			#{board_writer}
-			,#{board_title}
-			,#{board_content}
-		)	
-			]]>
+	INSERT INTO board (
+		board_writer
+		,board_title
+		,board_content
+	) VALUES (
+		#{board_writer}
+		,#{board_title}
+		,#{board_content}
+	)	
+	]]>
 	</insert>
 	
 	<!-- 게시판 삭제 -->
 	<delete id="boardDelete" parameterType="int">
 	<![CDATA[
-		delete from board where board_bno = #{board_bno}
+	delete from board where board_bno = #{board_bno}
 	]]>
-	
 	</delete>
+	
+	<!-- listPage -->
+	<select id="listPage" resultType="com.simpleplan.boot.domain.BoardVO">
+	<![CDATA[
+	select
+		board_bno, board_title, board_content, board_writer, board_regdate
+	from 
+		board
+	where board_bno > 0 
+	order by board_bno asc, board_regdate asc
+	limit #{page}, 10
+	]]>
+	</select>
+	
+	<!-- listPage -->
+	<select id="listCriteria" resultType="com.simpleplan.boot.domain.BoardVO">
+	<![CDATA[
+	select 
+		board_bno, board_title,board_content, board_writer, board_regdate
+	from 
+		board
+	where board_bno > 0
+	order by board_bno asc, board_regdate asc
+	limit #{pageStart}, #{perPageNum}
+	]]>
+	</select>
+	
+	<!--  -->
+	<select id="countPaging" resultType="int">
+	<![CDATA[
+	select
+		count(board_bno)
+	from 
+		board
+	where
+		board_bno > 0
+	]]>
+	</select>
+	
 </mapper>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.simpleplan.boot.domain.BoardVO;
+import com.simpleplan.boot.domain.Criteria;
 
 @Repository("com.simpleplan.boot.dao.BoardDaoImpl")
 public class BoardDaoImpl implements BoardDao {
@@ -52,6 +53,32 @@ public class BoardDaoImpl implements BoardDao {
 	public void boardDelete(int board_bno) throws Exception {
 		
 		sqlssion.selectOne(namespace+".boardDelete",board_bno);
+	}
+	
+	//listPage
+	@Override
+	public List<BoardVO> listPage(int page) throws Exception {
+		
+		if (page <= 0 ) {
+			page = 1;
+		}
+		
+		page = (page - 1) * 10;
+		return sqlssion.selectList(namespace+".listPage", page);
+	}
+	
+	// listCriteria 검색 기준
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlssion.selectList(namespace+".listCriteria", cri);
+	}
+	
+	// Board
+	@Override
+	public int countPaging(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlssion.selectOne(namespace+".countPaging", cri);
 	}
 
 	

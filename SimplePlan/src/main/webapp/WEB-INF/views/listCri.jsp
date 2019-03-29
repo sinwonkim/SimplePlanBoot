@@ -121,7 +121,7 @@
 		</c:if>	
 		</ul>
 	</div>
-		
+
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 </body>

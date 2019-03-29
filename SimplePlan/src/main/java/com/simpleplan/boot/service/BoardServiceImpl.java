@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.simpleplan.boot.dao.BoardDao;
 import com.simpleplan.boot.domain.BoardVO;
+import com.simpleplan.boot.domain.Criteria;
 
 
 @Service("com.simpleplan.boot.service.BoardServiceImpl")
@@ -44,13 +45,35 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.boardUpdate(boardVO);
 		
 	}
-
+	//게시판 글 삭제
 	@Override
 	public void boardDelete(int board_bno) throws Exception {
 		
 		boardDao.boardDelete(board_bno);
 		
 	}
+	
+	//listPage
+	@Override
+	public List<BoardVO> listPage(int page) throws Exception {
+		
+		return boardDao.listPage(page);
+	}
+	
+	//listCriteria 검색기준
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		
+		return boardDao.listCriteria(cri);
+	}
+	
+	//totalCount return 
+	@Override
+	public int countPaging(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDao.countPaging(cri);
+	}
+	
 
 	
 
