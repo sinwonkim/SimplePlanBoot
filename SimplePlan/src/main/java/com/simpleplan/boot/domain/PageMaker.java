@@ -1,5 +1,11 @@
 package com.simpleplan.boot.domain;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class PageMaker {
 	
 	private int totalCount;
@@ -10,7 +16,7 @@ public class PageMaker {
 	
 	private int displayPageNum = 10; // 화면에 보여지는 페이지 번호의 숫자를 의미
 	
-	private Criteria cri;
+	private Criteria cri;  
 	
 	public void setCri(Criteria cri) {
 		this.cri = cri;
@@ -38,6 +44,36 @@ public class PageMaker {
 		prev = startPage == 1 ? false : true;
 		
 		next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
+	}
+	
+	// makeSearch() 경우 스프링의 UriComponents를 이용해서 페이징에 필요한 데이터를 생성하는 역할을 하게 됨 
+	// URI 동적으로 생성해주는 클래스이 UriComponets 이용 
+	public String makeSearch(int page) {
+		UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
+				.queryParam("perPageNum", cri.getPerPageNum())
+				.queryParam("searchType", ((Criteria)cri).getSearchType())
+				.queryParam("keyword", encoding(((Criteria) cri).getKeyword())).build();
+
+		return uriComponents.toUriString();
+	}
+	// view단에서 검색 눌럿을시에 URI 동적으로 생성해주는 클래스
+	public String makeQuery(int page) {
+		UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)//page?page&parPageNum=cri.getPerPageNum() 
+				.queryParam("perPageNum", cri.getPerPageNum()).build();
+		
+		return uriComponents.toUriString();
+	}
+	
+	private String encoding(String keyword) {
+		
+		if(keyword == null || keyword.trim().length() == 0) {
+			return "";
+		}
+		try {
+			return URLEncoder.encode(keyword, "UTF-8");
+		}catch (UnsupportedEncodingException e) {
+			return "";
+		}
 	}
 
 	public int getStartPage() {

@@ -80,8 +80,11 @@ public class BoardDaoImpl implements BoardDao {
 		// TODO Auto-generated method stub
 		return sqlssion.selectOne(namespace+".countPaging", cri);
 	}
-
 	
-	
-	
+	// listSearch
+	@Override
+	public List<BoardVO> listSearch(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlssion.selectList(namespace+".listSearch", cri);
+	}
 }

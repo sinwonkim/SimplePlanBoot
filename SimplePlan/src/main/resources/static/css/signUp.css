@@ -319,7 +319,7 @@ figure {
     margin-bottom: 0px; }
 
 input {
-  display: block;
+  display: inline-block;
   border: none;
   border-bottom: 1px solid #999;
   padding: 6px 30px;

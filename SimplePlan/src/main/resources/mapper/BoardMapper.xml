@@ -10,7 +10,9 @@
 	<!--게시판 상세보기  -->
 	<select id="boardDeatail" parameterType="int" resultType="com.simpleplan.boot.domain.BoardVO">
 	<![CDATA[
-		select * from board where board_bno = #{board_bno}
+		select *
+		from board
+		where board_bno = #{board_bno}
 	]]>
 	</select>
 	
@@ -50,7 +52,7 @@
 	]]>
 	</delete>
 	
-	<!-- listPage -->
+	<!-- listPage 게시판 리스트 페이지수 정하는거랑 한 페이지당 보여줄 갯수 리미트 정하는 것  -->
 	<select id="listPage" resultType="com.simpleplan.boot.domain.BoardVO">
 	<![CDATA[
 	select
@@ -58,7 +60,7 @@
 	from 
 		board
 	where board_bno > 0 
-	order by board_bno asc, board_regdate asc
+	order by board_bno desc, board_regdate desc
 	limit #{page}, 10
 	]]>
 	</select>
@@ -71,12 +73,12 @@
 	from 
 		board
 	where board_bno > 0
-	order by board_bno asc, board_regdate asc
+	order by board_bno desc, board_regdate desc
 	limit #{pageStart}, #{perPageNum}
 	]]>
 	</select>
 	
-	<!--  -->
+	<!-- 게시판 하단 페이징   -->
 	<select id="countPaging" resultType="int">
 	<![CDATA[
 	select
@@ -84,7 +86,44 @@
 	from 
 		board
 	where
-		board_bno > 0
+		board_bno > 0	
+	]]>
+	<if test="searchType != null">
+		<if test="searchType == 't'.toString()">
+			and board_title like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and board_content like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and board_writer like CONCAT('%', #{keyword}, '%')
+		</if>
+	</if>
+	</select>
+	
+	<!-- listSearch 검색 부분-->
+	<select id="listSearch" resultType="com.simpleplan.boot.domain.BoardVO">
+	<![CDATA[
+	select *
+	from board
+	where board_bno > 0
+	]]>
+	
+	<if test="searchType != null">
+		<if test="searchType == 't'.toString()">
+			and board_title like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and board_content like CONCAT('%', #{keyword}, '%')
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and board_writer like CONCAT('%', #{keyword}, '%')
+		</if>
+	
+	</if>
+	<![CDATA[
+	order by board_bno desc
+	limit #{pageStart}, #{perPageNum}
 	]]>
 	</select>
 	

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
     <!-- 로그인 된 상태일  때 -->
     <c:if test="${sessionScope.member_id eq null }">
     	 <script>
@@ -28,6 +30,25 @@
       <c:if test="${sessionScope.boardMsg ne null}">
          <c:remove var="boardMsg" scope="session"/>
     </c:if>
+    
+    <!-- 게시판 검색 -->
+    <script> // pageMaker 클래스의 makeQuery() 이용해 url만듬 
+    $(document).ready(
+    	function() {
+    		
+    		$("#searchBtn").on(
+    			"click",
+    			function(event) {
+    				
+    				self.location = "list"
+    				+ '${pageMaker.makeQuery(1)}'
+    				+ "&searchType="
+    				+ $("select option:selected").val()
+    				+ "&keyword=" + encodeURIComponent($('#keyword').val());
+    			});	
+    	});		
+    
+      </script>
 </head>
 <body>
 	<!-- Nav쪽 -->
@@ -69,9 +90,30 @@
 	  </div>
 	</nav>
 	
+	
+	
+	<!-- 게시판 검색창 -->
 	<!-- 게시판 -->
 	<div class="container">
-	    <form id="boardForm" name="boardForm" method="post">
+	    <form action="/board/list" id="boardForm" name="boardForm" method="GET">
+		    <div class='box-body'>
+		    	<select name="searchType">
+			    	<option value="n"
+			    		<c:out value="${cri.searchType == null?'selected':''}"/>>---
+				   	</option>
+			    	<option value="t" 
+			        	<c:out value="${cri.searchType eq 't'?'selected':''}"/>>Title 
+			        </option>
+			    	<option value="c"
+			    		<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>Content
+			    	</option>
+			    	<option value="w"
+			    		<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>Writer
+			    	</option>	
+		    	</select>
+		    	<input type="text"  name='keyword' id="keyword" value='${cri.keyword }'>
+				<button id="searchBtn">검색</button>
+		    </div>
 	        <table class="table table-striped table-hover">
 	            <thead>
 	                <tr>
@@ -84,9 +126,9 @@
 	            </thead>
 	            <tbody>	    			
 	                <c:forEach var="list" items="${list}" varStatus="status">
-					<tr>
+					<tr onclick="location.href='/board/detail/${list.board_bno}'">
 						<td>${list.board_bno}</td>
-						<td><b onclick="location.href='/board/detail/${list.board_bno}'">${list.board_title}</b></td>
+						<td>${list.board_title}</td>
 						<td>${list.board_content}</td>
 						<td>${list.board_writer}</td>
 						<td>${list.board_regdate}</td>
@@ -105,19 +147,18 @@
 		<ul class="pagination">
 		
 		<c:if test="${pageMaker.prev}">
-			<li><a href="listPage?page=${pageMaker.startPage -1}">&laquo;</a></li>
+			<li><a href="list${pageMaker.makeSearch(pageMaker.startPage -1) }">&laquo;</a></li>
 		</c:if>	
 		
-		<c:forEach begin="${pageMaker.startPage }"
-		end="${pageMaker.endPage }" var="board_bno">
+		<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="board_bno">
 			<li
 				<c:out value="${pageMaker.cri.page == board_bno?'class = active':'' }"/>>
-				<a href="listPage?page=${board_bno }">${board_bno}</a>
+				<a href="list${pageMaker.makeSearch(board_bno)}">${board_bno}</a>
 			</li>	
 		</c:forEach>
 		
 		<c:if test="${pageMaker.next && pageMaker.endPage > 0 }">
-			<li><a href="listPage?page=${pageMaker.endPage +1}">&raquo;</a></li>
+			<li><a href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 		</c:if>	
 		</ul>
 	</div>

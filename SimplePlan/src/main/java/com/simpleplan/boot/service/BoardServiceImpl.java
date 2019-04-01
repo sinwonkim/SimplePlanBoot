@@ -74,6 +74,13 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.countPaging(cri);
 	}
 	
+	// listSearch
+	@Override
+	public List<BoardVO> listSearch(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return boardDao.listSearch(cri);
+	}
+	
 
 	
 

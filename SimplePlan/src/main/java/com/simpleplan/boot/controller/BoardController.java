@@ -24,18 +24,20 @@ public class BoardController {
 	
 	// 게시판 리스트
 	@RequestMapping(value="/list", method = RequestMethod.GET)
-	public String list(Criteria cri,Model model) throws Exception{
-		model.addAttribute("list", boardService.listCriteria(cri));
+	public String list(@ModelAttribute Criteria cri,Model model) throws Exception{
+		System.out.println("getKeyword >>>>>>>>>>>>>>>>"+cri.getKeyword());
+	
+		model.addAttribute("list", boardService.listSearch(cri));
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		
-		pageMaker.setTotalCount(boardService.countPaging(cri));
+		pageMaker.setTotalCount(boardService.countPaging(cri)); // 하단부 페이징 
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "boardList";
 	}
-	
 	
 	//listCriteria 
 	@RequestMapping(value="/listPage", method = RequestMethod.GET)

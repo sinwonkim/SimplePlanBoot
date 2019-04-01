@@ -30,4 +30,7 @@ public interface BoardService {
 	
 	// totalCount를 return 
 	public int countPaging(Criteria cri) throws Exception;
+	
+	// search 
+	public List<BoardVO> listSearch(Criteria cri) throws Exception;
 }

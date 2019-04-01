@@ -4,7 +4,26 @@ public class Criteria { // 검색 기준
 	
 	private int page; // 페이지 번호 
 	private int perPageNum; // 페이지당 보여줄 개수
+	private String searchType; // 검색조건
+	private String keyword; // 검색 내용(키워드)
 	
+	
+	public String getSearchType() {
+		return searchType;
+	}
+
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
 	public Criteria( ) {
 		this.page = 1; // 페이지 번호 1로 지정
 		this.perPageNum = 10; // 리스트당 데이터수 10
@@ -47,11 +66,16 @@ public class Criteria { // 검색 기준
 		
 		return this.perPageNum;
 	}
-
-	@Override
-	public String toString() {
-		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + "]";
+	
+	// toString
+	public Criteria(int page, int perPageNum, String searchType, String keyword) {
+		super();
+		this.page = page;
+		this.perPageNum = perPageNum;
+		this.searchType = searchType;
+		this.keyword = keyword;
 	}
+
 	
 	
 }

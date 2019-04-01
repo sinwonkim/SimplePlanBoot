@@ -31,4 +31,6 @@ public interface BoardDao {
 	// totalCount return
 	public int countPaging(Criteria cri) throws Exception;
 	
+	// listSearch
+	public List<BoardVO> listSearch(Criteria cri) throws Exception;
 }
