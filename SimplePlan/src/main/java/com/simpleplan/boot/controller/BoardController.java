@@ -28,7 +28,7 @@ public class BoardController {
 		System.out.println("getKeyword >>>>>>>>>>>>>>>>"+cri.getKeyword());
 	
 		model.addAttribute("list", boardService.listSearch(cri));
-		
+		model.addAttribute("cri", cri);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		
