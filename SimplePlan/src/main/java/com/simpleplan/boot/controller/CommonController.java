@@ -17,7 +17,7 @@ import com.simpleplan.boot.service.BoardService;
 
 @Controller
 public class CommonController {
-	@Resource(name="com.simpleplan.boot.service.BoardServiceImpl")
+	@Resource(name="com.simpleplan.boot.service.Impl.BoardServiceImpl")
 	BoardService boardService;
 	
 	@RequestMapping(value = "/student", method = RequestMethod.GET)

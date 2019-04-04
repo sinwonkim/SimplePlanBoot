@@ -1,4 +1,4 @@
-package com.simpleplan.boot.dao;
+package com.simpleplan.boot.dao.Impl;
 
 
 import java.util.List;
@@ -7,10 +7,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.simpleplan.boot.dao.BoardDao;
 import com.simpleplan.boot.domain.BoardVO;
 import com.simpleplan.boot.domain.Criteria;
 
-@Repository("com.simpleplan.boot.dao.BoardDaoImpl")
+@Repository("com.simpleplan.boot.dao.Impl.BoardDaoImpl")
 public class BoardDaoImpl implements BoardDao {
 	
 	@Autowired

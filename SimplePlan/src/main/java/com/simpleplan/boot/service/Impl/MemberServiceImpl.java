@@ -1,4 +1,4 @@
-package com.simpleplan.boot.service;
+package com.simpleplan.boot.service.Impl;
 
 
 import javax.annotation.Resource;
@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.simpleplan.boot.dao.MemberDao;
 import com.simpleplan.boot.domain.MemberVO;
+import com.simpleplan.boot.service.MemberService;
 
-@Service("com.simpleplan.boot.service.MemberServiceImpl")
+@Service("com.simpleplan.boot.service.Impl.MemberServiceImpl")
 public class MemberServiceImpl implements MemberService {
 	
-	@Resource(name="com.simpleplan.boot.dao.MemberDaoImpl")
+	@Resource(name="com.simpleplan.boot.dao.Impl.MemberDaoImpl")
 	MemberDao memberDao;
 	
 	@Override

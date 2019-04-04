@@ -14,7 +14,7 @@ import com.simpleplan.boot.service.MemberService;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	@Resource(name="com.simpleplan.boot.service.MemberServiceImpl")
+	@Resource(name="com.simpleplan.boot.service.Impl.MemberServiceImpl")
 	MemberService memberService;
 	
 	@RequestMapping("/main")

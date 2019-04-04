@@ -1,4 +1,4 @@
-package com.simpleplan.boot.service;
+package com.simpleplan.boot.service.Impl;
 
 import java.util.List;
 
@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 import com.simpleplan.boot.dao.BoardDao;
 import com.simpleplan.boot.domain.BoardVO;
 import com.simpleplan.boot.domain.Criteria;
+import com.simpleplan.boot.service.BoardService;
 
 
-@Service("com.simpleplan.boot.service.BoardServiceImpl")
+@Service("com.simpleplan.boot.service.Impl.BoardServiceImpl")
 public class BoardServiceImpl implements BoardService {
 	
-	@Resource(name="com.simpleplan.boot.dao.BoardDaoImpl")
+	@Resource(name="com.simpleplan.boot.dao.Impl.BoardDaoImpl")
 	BoardDao boardDao;
 	
 	//게시판 리스트 보기

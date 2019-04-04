@@ -96,8 +96,10 @@
          		<script>
                         CKEDITOR.replace( 'board_content' );
                 </script>
-                <button type="button" class="btn btn-primary btn-input"  name="writeCancel" value="취소" onclick="goPage();">취소</button>
-				<button type="button" class="btn btn-primary btn-input" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
+                <div class='right-box' style="float: right;">
+                <button type="button" class="btn btn-primary btn-input" style="width: 50px;" name="writeCancel" value="취소" onclick="goPage();">취소</button>
+				<button type="button" class="btn btn-primary btn-input" style="width: 50px;" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
+				</div>
 			</form>
 	</div>
 	

@@ -1,12 +1,13 @@
-package com.simpleplan.boot.dao;
+package com.simpleplan.boot.dao.Impl;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.simpleplan.boot.dao.MemberDao;
 import com.simpleplan.boot.domain.MemberVO;
 
-@Repository("com.simpleplan.boot.dao.MemberDaoImpl")
+@Repository("com.simpleplan.boot.dao.Impl.MemberDaoImpl")
 public class MemberDaoImpl implements MemberDao {
 	
 	@Autowired

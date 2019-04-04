@@ -1,0 +1,18 @@
+@charset "UTF-8";
+textarea {
+			width:3000x;
+			border:2px solid #aaa;
+			border-radius:4px;
+			margin: 8px 0;
+			outline:none;
+			padding:8px;
+			box-sizing: border-box;
+			transition: .3s;
+		}
+textarea:focus {
+			border-color:dodgerblue;
+			box-shadow: 0 0 8px 0 dodgerblue;
+		}
+li {
+	list-style: none;
+}

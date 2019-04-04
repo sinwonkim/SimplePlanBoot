@@ -11,16 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.simpleplan.boot.domain.BoardVO;
+import com.simpleplan.boot.domain.CommentVO;
 import com.simpleplan.boot.domain.Criteria;
 import com.simpleplan.boot.domain.PageMaker;
 import com.simpleplan.boot.service.BoardService;
+import com.simpleplan.boot.service.CommentService;
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 	
-	@Resource(name="com.simpleplan.boot.service.BoardServiceImpl")
+	@Resource(name="com.simpleplan.boot.service.Impl.BoardServiceImpl")
 	BoardService boardService;
+
+	@Resource(name="com.simpleplan.boot.service.Impl.CommentServiceImpl")
+	CommentService commentService;
 	
 	// 게시판 리스트
 	@RequestMapping(value="/list", method = RequestMethod.GET)
@@ -101,6 +106,7 @@ public class BoardController {
 		
 		return "redirect:/board/detail/"+boardVO.getBoard_bno();
 	}
+	
 	// 게시판 글 삭제하기
 	@RequestMapping(value = "/delete/{board_bno}", method = RequestMethod.GET)
 	public String delete(@PathVariable int board_bno) throws Exception {
@@ -117,12 +123,19 @@ public class BoardController {
 		return "boardWrite";
 	}
 	
-		
 	// 게시판 글 등록
 	@RequestMapping(value="/write" , method = RequestMethod.POST)
 	public String write(Model model,BoardVO boardVO, HttpSession session) throws Exception{	
 		boardService.boardInsert(boardVO); // 게시판 글 등록
 		session.setAttribute("boardMsg", "글이 등록되었습니다.");		
 		return "redirect:/board/list";
+	}
+	
+	// 댓글 등록
+	@RequestMapping(value="/comment" , method = RequestMethod.POST)
+	public String commentWrite(Model model, CommentVO commentVO, HttpSession session) throws Exception{
+		model.addAttribute("commentVO", commentVO);
+		commentService.commentInsert(commentVO); // 댓글 등록		
+		return "redirect:/board/detail/"+commentVO.getComment_bno();
 	}
 }
