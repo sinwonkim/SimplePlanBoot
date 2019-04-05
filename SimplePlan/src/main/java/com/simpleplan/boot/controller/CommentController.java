@@ -26,15 +26,17 @@ public class CommentController {
 		return commentService.commentList(board_bno);
 	}
 	
-	// 댓글 작성
+/*	// 댓글 작성
 	@PostMapping
 	public void add(@RequestBody CommentVO commentVO) throws Exception{
 		commentService.commentInsert(commentVO);
-	}
+	}*/
 	
 	// 댓글 삭제
 	@DeleteMapping
 	public void delete(@RequestParam (value="cno") int comment_cno) throws Exception{
 		commentService.commentDelete(comment_cno);
 	}
+	
+	
 }

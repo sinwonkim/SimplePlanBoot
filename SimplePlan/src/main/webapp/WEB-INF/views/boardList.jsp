@@ -13,15 +13,16 @@
     <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
 	<!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
+     <link rel="stylesheet" href="/resources/css/boardList.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
     <!-- 로그인 된 상태일  때 -->
-    <c:if test="${sessionScope.member_id eq null }">
+  <%--   <c:if test="${sessionScope.member_id eq null }">
     	 <script>
 	    	  alert('로그인 이후 이용하실 수 있습니다.');
 	 		  location.href='/member/login';
  		 </script>
-    </c:if> 
+    </c:if> --%>
     
     <c:if test="${sessionScope.boardMsg ne null}">
         <script>alert('${sessionScope.boardMsg}');</script>	
@@ -118,20 +119,21 @@
 	            <thead>
 	                <tr>
 	                    <th>번호</th>
-	                    <th>제목</th>
-	                    <th>내용</th>
-	                    <th>작성자</th>
-	                    <th>글작성</th>
+	                    <th style="text-align: center;">제목</th>
+	                    <!-- <th>내용</th> -->
+	                    <th style="width:100px;">작성자</th>
+	                    <th style="width:230px;">글작성</th>
 	                </tr>
 	            </thead>
 	            <tbody>	    			
-	                <c:forEach var="list" items="${list}" varStatus="status">
+	                <c:forEach var="list" items="${list}" varStatus="g">
 					<tr onclick="location.href='/board/detail/${list.board_bno}'">
 						<td>${list.board_bno}</td>
-						<td>${list.board_title}</td>
-						<td>${list.board_content}</td>
+						<td style="text-align: center;">${list.board_title}</td>
 						<td>${list.board_writer}</td>
-						<td>${list.board_regdate}</td>
+						<td>
+					${list.board_regdate}
+						</td>
 					</tr>
 					</c:forEach>
 	            </tbody>

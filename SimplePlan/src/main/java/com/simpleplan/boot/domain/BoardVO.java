@@ -1,11 +1,13 @@
 package com.simpleplan.boot.domain;
 
+import java.util.Date;
+
 public class BoardVO {
 	private int board_bno;
 	private String board_title;
 	private String board_content;
 	private String board_writer; 
-	private String board_regdate;
+	private Date board_regdate;
 	
 	public int getBoard_bno() {
 		return board_bno;
@@ -31,10 +33,10 @@ public class BoardVO {
 	public void setBoard_writer(String board_writer) {
 		this.board_writer = board_writer;
 	}
-	public String getBoard_regdate() {
+	public Date getBoard_regdate() {
 		return board_regdate;
 	}
-	public void setBoard_regdate(String board_regdate) {
+	public void setBoard_regdate(Date board_regdate) {
 		this.board_regdate = board_regdate;
 	}
 	

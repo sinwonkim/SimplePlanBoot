@@ -135,7 +135,8 @@ public class BoardController {
 	@RequestMapping(value="/comment" , method = RequestMethod.POST)
 	public String commentWrite(Model model, CommentVO commentVO, HttpSession session) throws Exception{
 		model.addAttribute("commentVO", commentVO);
-		commentService.commentInsert(commentVO); // 댓글 등록		
+		commentService.commentInsert(commentVO); // 댓글 등록
+		session.setAttribute("comment_writer", commentVO.getComment_writer());
 		return "redirect:/board/detail/"+commentVO.getComment_bno();
 	}
 }

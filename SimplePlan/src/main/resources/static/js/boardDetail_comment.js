@@ -1,5 +1,7 @@
 var bno = $(".comment_bno").val();
 
+	
+
 //댓글 리스트
 function commentList(){
 	$.ajax({
@@ -9,13 +11,15 @@ function commentList(){
 	    data : {'bno':bno},
 	    success : function(data){
 	        var a =''; 
-	        $.each(data, function(key, value){ 
-	            a += '<li>'+value.comment_writer+'</li>';
-	            a += '<li>'+value.comment_content+'</li>';
-	            a += '<li>'+value.comment_regdate+'</li>';
-	            a += '<li><button type="button" onclick="commentDelete('+value.comment_cno+');">댓글 삭제</button></li>';
-	        });
 	        
+	        $.each(data, function(key, value){ 
+	            a += '<li>'+'작성자: '+value.comment_writer+'&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp'+value.comment_regdate+'</li>';
+	            a += '<p style="margin:10px; width:925px;">'+value.comment_content+'<p>';	            
+	            if($('input[name=comment_writer]').val()==value.comment_writer){
+	            	a += '<li><button type="button" onclick="commentDelete('+value.comment_cno+');">댓글 삭제</button></li>';	
+	            }	            
+	            a += '<br>';	            
+	        });      
 	        $(".commentList").html(a);
 	        }
 	    });

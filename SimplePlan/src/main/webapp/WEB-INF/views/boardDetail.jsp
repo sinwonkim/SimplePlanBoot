@@ -19,12 +19,12 @@
     <!-- <link rel="stylesheet" href="/resources/css/signUp.css"> -->
     
     <!-- 로그인 된 상태일  때 -->
-     <c:if test="${sessionScope.member_id eq null }">
+ <%-- 	<c:if test="${sessionScope.member_id eq null }">
     	 <script>
 	    	  alert('로그인 이후 이용하실 수 있습니다.');
 	 		  location.href='/member/login';
  		 </script>
-    </c:if> 
+    </c:if>  --%>
     
     <c:if test="${sessionScope.boardMsg ne null}">
         <script>alert('${sessionScope.boardMsg}');</script>	
@@ -80,7 +80,7 @@
 	</nav>
 	
 	<!-- 게시판 -->
-	<div class="container">
+	<div class="container" style="margin-left: 190px;">
 		
 			<div class="form-group">
 				
@@ -101,7 +101,7 @@
 			</div>
 		
 		<div style="float:right">
-		<button type="button" class="btn btn-primary btn-input" style="width: 75px;" name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
+		
 		<c:if test="${sessionScope.member_id eq detail.board_writer}">
 		<button type="button" class="btn btn-success" style="width: 75px;" onclick="location.href='/board/update/${detail.board_bno}'">글 수정</button>
 		<button type="button" class="btn btn-success" style="width: 75px;" onclick="location.href='/board/delete/${detail.board_bno}'">글 삭제</button>
@@ -109,20 +109,27 @@
 		</div>			
 	</div>
 	<!-- comment start -->
+	
+	<!-- 게시판 리스트 글의 댓글 리스트 -->
 	<div class="commentList">
-	</div>
+	</div>	
 	
-	
+	<!-- 게시판 리스트 글의 댓글  -->
 	<form action="/board/comment" method="POST" name="commentInsertForm">
-	<div>
-		<input type="hidden" value="${detail.board_bno}" class="comment_bno" name="comment_bno"/>
-		<input type="hidden" value="${sessionScope.member_id}" class="comment_writer" name="comment_writer">
-		<textarea rows="5" cols="40" name="comment_content">
-		</textarea>
-		<button type="button" id="comment_submit">제출</button>	
-	</div>
+		<div>
+			<input type="hidden" value="${detail.board_bno}" class="comment_bno" name="comment_bno"/>
+			<input type="hidden" value="${sessionScope.member_id}" class="comment_writer" name="comment_writer">		
+		</div>
+		<div class="comment_box">
+			<div>
+				<textarea rows="5" cols="200" name="comment_content" class="comment_content"></textarea>
+			</div>
+			<div>
+				<button type="button" id="comment_submit" class="comment_btn">등록</button>
+				<button type="button" class=" btn-input" style="width: 75px;" name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
+			</div>
+		</div>	
 	</form>
-	
 	
 	
 	<!-- comment end -->

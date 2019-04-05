@@ -92,7 +92,7 @@
 			<form action="/board/write" method="POST" name="write_form">
 				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" value="${id}" />
 				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
-				 <textarea name="board_content" class="ckeditor" rows="20" cols="50" name="board_content" id="board_content" placeholder="내용" ></textarea>
+				 <textarea name="board_content" class="ckeditor" rows="20" cols="200" name="board_content" id="board_content" placeholder="내용" ></textarea>
          		<script>
                         CKEDITOR.replace( 'board_content' );
                 </script>

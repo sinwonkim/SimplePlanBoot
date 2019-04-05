@@ -128,15 +128,15 @@
                                 <input type="text" name="member_id" id="member_id" placeholder="아이디"/>
                             </div>
                             <div class="form-group">
-                            	<label for="member_password"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            	<label for="member_password"><i class="zmdi zmdi-lock"></i></label>
                             	<input type="password" name="member_password" id="member_password" placeholder="패스워드"/>
                             </div>
                             <div class="form-group">
-                                <label for="member_name"><i class="zmdi zmdi-email"></i></label>
+                                <label for="member_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_name" id="member_name" placeholder="이름"/>
                             </div>
                             <div class="form-group">
-                                <label for="member_email"><i class="zmdi zmdi-lock"></i></label>
+                                <label for="member_email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="member_email" id="member_email" placeholder="이메일"/>
                             </div>
                             <div class="form-group">
