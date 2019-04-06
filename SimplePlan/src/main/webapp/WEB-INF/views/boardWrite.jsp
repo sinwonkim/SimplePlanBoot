@@ -62,7 +62,7 @@
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
-	        <li><a class="navbar-brand " href="/member/main"  style="margin-left:0px;">Home</a></li>
+	        <li><a class="navbar-brand " href="/"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>

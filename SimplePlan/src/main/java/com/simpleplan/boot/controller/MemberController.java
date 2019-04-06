@@ -1,6 +1,9 @@
 package com.simpleplan.boot.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.simpleplan.boot.domain.MemberVO;
 import com.simpleplan.boot.service.MemberService;
 
@@ -16,11 +20,6 @@ import com.simpleplan.boot.service.MemberService;
 public class MemberController {
 	@Resource(name="com.simpleplan.boot.service.Impl.MemberServiceImpl")
 	MemberService memberService;
-	
-	@RequestMapping("/main")
-	private String main() {
-		return "main";
-	}
 	
 	// 로그인 화면
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -31,7 +30,9 @@ public class MemberController {
 	
 	// 로그인 처리 
 	@RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
-	public String loginCheck(@ModelAttribute MemberVO memberVO, HttpSession session) throws Exception {
+	public String loginCheck(@ModelAttribute MemberVO memberVO,HttpServletResponse response,HttpServletRequest request, HttpSession session) throws Exception {
+		 String cookie = request.getParameter("useCookie");
+		 System.out.println(">>>>>>>>>"+cookie);
 		boolean result = memberService.loginCheck(memberVO);	
 		String location = "";
 		if (result) { // true일 경우 세션에 등록 
@@ -40,8 +41,17 @@ public class MemberController {
 			session.setAttribute("member_name", memberVO.getMember_name());
 			System.out.println("sessison >>>>>>>>>>>>"+session.getAttribute("member_id"));
 		}
+		// cookie
+		if(request.getParameter("useCookie") != null) {
+			/*Cookie loginCookie = new Cookie("useCookie", (String) session.getAttribute("member_id"));*/
+			Cookie loginCookie = new Cookie("useCookie", "Vein");
+			loginCookie.setPath("/");
+			loginCookie.setMaxAge(60*60*24*7);
+			response.addCookie(loginCookie);
+			
+		}
 		if (result == true) {// 로그인 성공
-			location = "main";
+			location = "/";
 		
 		} else { // 로그인 실패
 			// login.jsp로 이동 

@@ -17,12 +17,12 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
     <!-- 로그인 된 상태일  때 -->
-  <%--   <c:if test="${sessionScope.member_id eq null }">
+     <c:if test="${sessionScope.member_id eq null }">
     	 <script>
 	    	  alert('로그인 이후 이용하실 수 있습니다.');
 	 		  location.href='/member/login';
  		 </script>
-    </c:if> --%>
+    </c:if> 
     
     <c:if test="${sessionScope.boardMsg ne null}">
         <script>alert('${sessionScope.boardMsg}');</script>	
@@ -69,7 +69,7 @@
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
-	        <li><a class="navbar-brand " href="/member/main"  style="margin-left:0px;">Home</a></li> 
+	        <li><a class="navbar-brand " href="/"  style="margin-left:0px;">Home</a></li> 
 	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
 	    </div>

@@ -39,7 +39,7 @@
     <c:if test="${sessionScope.member_id ne null }">
     	 <script>
 	    	 alert('로그인  상태 입니다..');
-	    	 location.href='main';
+	    	 location.href='/';
     	 </script>	
     </c:if>
 </head>
@@ -61,7 +61,7 @@
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav" >
-	        <li><a class="navbar-brand " href="main"  style="margin-left:0px;">Home</a></li>
+	        <li><a class="navbar-brand " href="/"  style="margin-left:0px;">Home</a></li>
 	        <!-- <li><a href="#">2번 메뉴</a></li> --> 
 	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
@@ -111,8 +111,8 @@
                                 <input type="password" name="member_password" id="member_password" placeholder="Password"/>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                <input type="checkbox" name="useCookie" id="useCookie" class="agree-term" />
+                                <label for="useCookie" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
                                 <input type="button" name="signin" id="signin" value="로그인" onclick="Login();"/>
