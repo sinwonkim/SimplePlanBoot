@@ -76,6 +76,11 @@ API : weather API,ck editor
 <img src = "https://i.imgur.com/woUCfOM.png">
 </div>
 
+## 게시판 글 댓글
+<div>
+<img src = "https://i.imgur.com/Tp0bXaP.png">  
+</div>
+
 ## 게시판 글 수정
 <div>
 <img src = "https://i.imgur.com/sZUE2QB.png">
