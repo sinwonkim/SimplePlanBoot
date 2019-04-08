@@ -18,6 +18,25 @@ library: JSTL
 
 API : weather API,ck editor
 
+## 구현한 기능
+메인페이지 
+- todoList 
+- wheather Api
+
+
+회원가입
+ 
+-아이디 중복검사  
+-비밀번호,이메일 유효성 검사 
+-로그인시 세션  , 로그인 유지 체크시(쿠키)
+
+게시판
+-crud,본인 아닐시에 수정,삭제 x       
+-Ck editor
+-게시판 검색 작성자,내용
+-댓글 본인일 경우에만 삭제 가능 
+
+---
 # 유튜브 동영상 입니다. 아래 화면을 누르시면  유튜브 동영상으로 촬영된 화면을 볼 수 있습니다.
 [![Watch the video](https://i.imgur.com/eJHxLRE.jpg)](https://youtu.be/xfcV8GshYaM)
 ---
