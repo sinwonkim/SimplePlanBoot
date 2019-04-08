@@ -14,7 +14,7 @@ Front End: HTML, CSS, JavaScript, BootStrap
 
 Back End: JAVA
 
-library: JSTl
+library: JSTL
 
 API : weather API,ck editor
 
