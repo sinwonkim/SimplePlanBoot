@@ -18,7 +18,7 @@ library: JSTl
 
 API : weather API,ck editor
 
-# 유튜브 동영상 입니다.
+# 유튜브 동영상 입니다. 아래 화면을 누르시면  유튜브 동영상으로 촬영된 화면을 볼 수 있습니다.
 [![Watch the video](https://i.imgur.com/eJHxLRE.jpg)](https://youtu.be/xfcV8GshYaM)
 ---
 ---
