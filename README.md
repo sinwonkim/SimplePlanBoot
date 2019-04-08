@@ -19,7 +19,7 @@ library: JSTl
 API : weather API,ck editor
 
 
-(https://i.imgur.com/vKb2F1B.png)](https://youtu.be/xfcV8GshYaM)
+[![Watch the video](https://i.imgur.com/eJHxLRE.jpg)](https://youtu.be/xfcV8GshYaM)
 ---
 ---
 
