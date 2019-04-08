@@ -184,4 +184,4 @@ boardService.boardInsert() 를 통해 폼에서 작성된 writer와, title,conte
 
 참고사항
 ---
-1인개발 3월 15일부터 현재 진행중 입니다.
+1인개발 총 15일 
