@@ -22,6 +22,7 @@ API : weather API,ck editor
 
 ---
 ---
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 ## 메인화면
 <div>
 <img src = "https://i.imgur.com/s8StWaB.jpg">
