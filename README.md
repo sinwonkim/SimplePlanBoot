@@ -19,10 +19,10 @@ library: JSTl
 API : weather API,ck editor
 
 
+(https://i.imgur.com/vKb2F1B.png)](https://youtu.be/xfcV8GshYaM)
+---
+---
 
----
----
-[![Watch the video](https://i.ytimg.com/vi/xfcV8GshYaM/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDK-n3WNDfWrlP4aeumwdBx8JjWXw](https://youtu.be/dvBuXWcwb78)
 ## 메인화면
 <div>
 <img src = "https://i.imgur.com/s8StWaB.jpg">
