@@ -22,7 +22,7 @@ API : weather API,ck editor
 
 ---
 ---
-[![Watch the video](https://i.imgur.com/eJHxLRE.jpg](https://youtu.be/dvBuXWcwb78)
+[![Watch the video](https://i.ytimg.com/vi/xfcV8GshYaM/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDK-n3WNDfWrlP4aeumwdBx8JjWXw](https://youtu.be/dvBuXWcwb78)
 ## 메인화면
 <div>
 <img src = "https://i.imgur.com/s8StWaB.jpg">
