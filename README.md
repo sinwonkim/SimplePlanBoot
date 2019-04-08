@@ -58,6 +58,31 @@ API : weather API,ck editor
 <img src = "https://i.imgur.com/IAlSTkY.png">
 </div>
 
+## 파일구조
+<div>
+<img src = "https://i.imgur.com/ci8WV53.png">
+</div>
+
+<div>
+<img src = "https://i.imgur.com/Wba98bf.png">
+</div>
+
+##테이블구조 
+## member(회원관리)
+<div>
+<img src = "https://i.imgur.com/A5Um4ql.png">
+</div>
+
+## board(게시판)
+<div>
+<img src = "https://i.imgur.com/VJajN1x.png">
+</div>
+
+## comment(게시팟 댓글)
+<div>
+<img src = "https://i.imgur.com/0QDSTxZ.png">
+</div>
+
 
 
 
