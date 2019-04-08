@@ -35,23 +35,29 @@ API : weather API,ck editor
 
 ## 회원가입
 <div>
-<img src = "https://i.imgur.com/ozy175Q.png">
+<img src = "https://i.imgur.com/z6NTZl0.png">
 </div>
 
 ## 게시판
 <div>
-<img src = "https://i.imgur.com/tOLYTtZ.png">
+<img src = "https://i.imgur.com/ep8nrcX.png">
 </div>
 
 ## 게시판 글 작성
 <div>
-<img src = "https://i.imgur.com/5uxDPab.png">
+<img src = "https://i.imgur.com/woUCfOM.png">
 </div>
 
 ## 게시판 글 수정
 <div>
 <img src = "https://i.imgur.com/sZUE2QB.png">
 </div>
+
+## 게시판 글 검색
+<div>
+<img src = "https://i.imgur.com/IAlSTkY.png">
+</div>
+
 
 
 
