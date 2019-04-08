@@ -16,7 +16,7 @@
     <title>Sign Up Form by Colorlib</title>
     <script src="https://cdn.ckeditor.com/4.11.3/standard/ckeditor.js"></script>
     <script type="text/javascript">
-	    function boardWrite() {
+	    /* function boardWrite() {
 	    	var form1 = document.write_form;
 	    	var title = document.getElementById('board_title');	
 	    	if(title.value == "") {
@@ -25,8 +25,29 @@
 	    		return;
 	    	}
 	    	form1.submit(); 
-	    }	    
+	    } */	    
 	    /* 글 작성 취소  */	
+	    
+	    function boardWrite(){
+	    	/* var form1 = document.write_form;
+	    	 */
+	    	var formData = $('#write_form').serialize();
+	    	
+	    	$.ajax({
+	    		url : '/board/write',
+	    		type: 'POST',
+	    		data: formData,
+	    		success : function(data){
+	    			if(data = true){
+	    				alert('글작성완료');
+	    				$('#test111').append($('#board_title').val());
+	    			}
+	    		}
+	    	})
+	    	/* 
+	    	form1.submit();	 */
+	    }
+	    
 	    function goPage() {location.href="/board/list";} 
     </script>
     
@@ -89,7 +110,7 @@
 	<!-- 게시판 글쓰기  -->
 	<div class="container">
 			<h2 class="mt-sm-5">글 작성</h2>
-			<form action="/board/write" method="POST" name="write_form">
+			<form action="" method="POST" name="write_form" id="write_form">
 				<input type="hidden" class="form-control w-50 mb-sm-1" name="board_writer" id="board_writer" value="${id}" />
 				<input type="text" class="form-control w-50 mb-sm-1" name="board_title" id="board_title" placeholder="제목">
 				 <textarea name="board_content" class="ckeditor" rows="20" cols="200" name="board_content" id="board_content" placeholder="내용" ></textarea>
@@ -101,6 +122,10 @@
 				<button type="button" class="btn btn-primary btn-input" style="width: 50px;" name="boardWritein" value="등록" onclick="boardWrite();">등록</button>
 				</div>
 			</form>
+	</div>
+
+	<div id="test111">
+	
 	</div>
 	
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>

@@ -72,7 +72,6 @@
        <ol class="js-toDoList" type="1">
        
        </ol>
-       
         <script src="/resources/js/printClock.js"></script>
         <script src="/resources/js/gretting.js"></script>
         <script src="/resources/js/todo.js"></script>

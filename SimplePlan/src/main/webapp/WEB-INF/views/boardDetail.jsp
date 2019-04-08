@@ -5,20 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="/resources/css/bootstrap.css">
- <link rel="stylesheet" href="/resources/css/boardDetail.css">
- <link rel="stylesheet" href="/resources/css/signUp.css">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
- 	<!-- Font Icon -->
-    <link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
-    <!-- bootStrap Grid -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<!-- Main css -->
-    <!-- <link rel="stylesheet" href="/resources/css/signUp.css"> -->
-    
-    <!-- 로그인 된 상태일  때 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/resources/css/bootstrap.css">
+<link rel="stylesheet" href="/resources/css/boardDetail.css">
+<link rel="stylesheet" href="/resources/css/signUp.css">
+<link rel="stylesheet" href="/resources/fonts/material-icon/css/material-design-iconic-font.min.css">
+<!-- bootStrap Grid -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>boardDetail</title>
+ 	<!-- 댓글  -->
+    <script type="text/javascript">   
+    $(document).ready(function(){
+        commentList();
+    });  
+    </script>
   	<c:if test="${sessionScope.member_id eq null }">
     	 <script>
 	    	  alert('로그인 이후 이용하실 수 있습니다.');
@@ -115,7 +116,7 @@
 	</div>	
 	
 	<!-- 게시판 리스트 글의 댓글  -->
-	<form action="/board/comment" method="POST" name="commentInsertForm">
+	<form action="" method="POST" name="commentInsertForm" id="commentInsertForm">
 		<div>
 			<input type="hidden" value="${detail.board_bno}" class="comment_bno" name="comment_bno"/>
 			<input type="hidden" value="${sessionScope.member_id}" class="comment_writer" name="comment_writer">		
@@ -125,7 +126,8 @@
 				<textarea rows="5" cols="200" name="comment_content" class="comment_content"></textarea>
 			</div>
 			<div>
-				<button type="button" id="comment_submit" class="comment_btn">등록</button>
+				<!-- <button type="button" id="comment_submit" class="comment_btn">등록</button>
+				 --><a onclick="commentInsert();">등록</a>
 				<button type="button" class=" btn-input" style="width: 75px;" name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
 			</div>
 		</div>	
@@ -133,7 +135,10 @@
 	
 	
 	<!-- comment end -->
-<script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/boardDetail_comment.js"></script>
 </body>

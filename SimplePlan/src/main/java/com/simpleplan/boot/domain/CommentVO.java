@@ -1,11 +1,13 @@
 package com.simpleplan.boot.domain;
 
+import java.util.Date;
+
 public class CommentVO {
 	private int comment_cno;
 	private int comment_bno;
 	private String comment_content;
 	private String comment_writer; 
-	private String comment_regdate;
+	private Date comment_regdate;
 	
 	public int getComment_bno() {
 		return comment_bno;
@@ -39,11 +41,11 @@ public class CommentVO {
 		this.comment_writer = comment_writer;
 	}
 
-	public String getComment_regdate() {
+	public Date getComment_regdate() {
 		return comment_regdate;
 	}
 
-	public void setComment_regdate(String comment_regdate) {
+	public void setComment_regdate(Date comment_regdate) {
 		this.comment_regdate = comment_regdate;
 	}
 

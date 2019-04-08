@@ -47,6 +47,7 @@ public class MemberController {
 			Cookie loginCookie = new Cookie("useCookie", "Vein");
 			loginCookie.setPath("/");
 			loginCookie.setMaxAge(60*60*24*7);
+			
 			response.addCookie(loginCookie);
 			
 		}
