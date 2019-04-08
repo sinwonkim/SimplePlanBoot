@@ -1,5 +1,8 @@
 package com.simpleplan.boot.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +12,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.simpleplan.boot.domain.CommentVO;
 import com.simpleplan.boot.domain.MemberVO;
 import com.simpleplan.boot.service.MemberService;
 
@@ -43,8 +49,7 @@ public class MemberController {
 		}
 		// cookie
 		if(request.getParameter("useCookie") != null) {
-			/*Cookie loginCookie = new Cookie("useCookie", (String) session.getAttribute("member_id"));*/
-			Cookie loginCookie = new Cookie("useCookie", "Vein");
+			Cookie loginCookie = new Cookie("useCookie", (String) session.getAttribute("member_id"));
 			loginCookie.setPath("/");
 			loginCookie.setMaxAge(60*60*24*7);
 			
@@ -93,4 +98,21 @@ public class MemberController {
 		}
 		return location;
 	}
+	@PostMapping(value="/signUpCheck")
+	@ResponseBody
+	public Map<String,String> signUpCheck(MemberVO memberVO) throws Exception {
+		Map<String,String> returnData = new HashMap<>();
+		
+		boolean result = memberService.signUpCheck(memberVO);
+		if(result) {//회원가입가능
+			returnData.put("code", "1");
+			returnData.put("message", "사용가능한아이디 :)");
+		}else {//아이디중복됨
+			returnData.put("code", "0");
+			returnData.put("message", "중복된아이디 :(");
+		}
+		
+		return returnData;
+	}
+
 }

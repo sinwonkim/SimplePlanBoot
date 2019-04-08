@@ -1,5 +1,9 @@
 var bno = $(".comment_bno").val();
 
+$(document).ready(function(){
+    commentList();
+});
+
 //댓글 리스트
 function commentList(){
 	$.ajax({
@@ -46,6 +50,8 @@ function commentInsert(){
 		}
 	})	
 }
+
+
 
 function commentDelete(cno){
     $.ajax({

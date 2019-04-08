@@ -27,6 +27,7 @@
 	    	form1.submit(); 
 	    } */	    
 	    /* 글 작성 취소  */	
+	    function goPage() {location.href="/board/list";}
 	    
 	    function boardWrite(){
 	    	/* var form1 = document.write_form;
@@ -40,7 +41,7 @@
 	    		success : function(data){
 	    			if(data = true){
 	    				alert('글작성완료');
-	    				$('#test111').append($('#board_title').val());
+	    				goPage();
 	    			}
 	    		}
 	    	})
@@ -48,7 +49,7 @@
 	    	form1.submit();	 */
 	    }
 	    
-	    function goPage() {location.href="/board/list";} 
+	   
     </script>
     
      <!-- 로그인 된 상태일  때 -->
@@ -124,9 +125,7 @@
 			</form>
 	</div>
 
-	<div id="test111">
-	
-	</div>
+
 	
 <script src="https://code.jquery.com/jquery-1.12.4.js" ></script>
 <script src="/resources/js/bootstrap.min.js"></script>

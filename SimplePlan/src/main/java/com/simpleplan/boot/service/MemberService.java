@@ -1,7 +1,4 @@
 package com.simpleplan.boot.service;
-
-import javax.servlet.http.HttpSession;
-
 import com.simpleplan.boot.domain.MemberVO;
 
 public interface MemberService {
@@ -16,5 +13,5 @@ public interface MemberService {
 	
 	//회원 로그인 체크 
 	public boolean loginCheck(MemberVO memberVO) throws Exception;
-
+	
 }

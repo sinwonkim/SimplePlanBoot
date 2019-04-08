@@ -14,12 +14,6 @@
 <!-- bootStrap Grid -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>boardDetail</title>
- 	<!-- 댓글  -->
-    <script type="text/javascript">   
-    $(document).ready(function(){
-        commentList();
-    });  
-    </script>
   	<c:if test="${sessionScope.member_id eq null }">
     	 <script>
 	    	  alert('로그인 이후 이용하실 수 있습니다.');
@@ -58,7 +52,7 @@
 	    <div>
 	    </div>
 	    <div  id="#bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav" >
+	      <ul class="nav navbar-nav" style="margin-top: -10px;">
 	        <li><a class="navbar-brand " href="/"  style="margin-left:0px;">Home</a></li> 
 	        <li><a href="/board/list">게시판</a></li> 
 	      </ul>
@@ -127,7 +121,7 @@
 			</div>
 			<div>
 				<!-- <button type="button" id="comment_submit" class="comment_btn">등록</button>
-				 --><a onclick="commentInsert();">등록</a>
+				 --><button type="button" onclick="commentInsert();" style="text-decoration:none; margin-left:5px;">등록</button>
 				<button type="button" class=" btn-input" style="width: 75px;" name="writeCancel" value="돌아가기" onclick="goPage();">돌아가기</button>
 			</div>
 		</div>	

@@ -14,48 +14,7 @@
 <!-- Main css -->
     <link rel="stylesheet" href="/resources/css/signUp.css">
     <script>
-    	function signUp() {
-	        var form1 = document.sign_up;
-	        var id = document.getElementById('member_id');
-	        var password = document.getElementById('member_password');
-	        var name = document.getElementById('member_name');
-	        var email = document.getElementById('member_email');
-	        var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-	        if(id.value == ""){
-	        	swal("아이디를 입력해야 합니다.")
-	            id.focus();
-	            return;
-	        }
-	        if(password.value == "") {
-	        	swal("패스워드를 입력해야 합니다.")
-	            password.focus();
-	            return;
-	        }
-	        if(name.value == "") {
-	        	swal("이름을 입력해야 합니다.")
-	            name.focus();
-	            return;
-	        }
-	        if(email.value == "") {
-	        	swal("이메일을 입력해야 합니다.")
-	            email.focus();
-	            return;
-	        }
-	        if(exptext.test(email.value)==false) {
-	        	swal("이메일형식이 올바르지 않습니다. ex)아이디@naver.com")
-	        	email.focus();
-	        	return false;
-	        }
-	        form1.submit();
-   	 }  
     	
-    	 // 회원가입완료 시 문구 
-        var msg = "${msg}";
-        if (msg === "SIGNUP") {
-        	swal("회원가입이 완료 되었습니다. 로그인 해주세요.");
-        } else if (msg === "FAIL") {
-        	swal("아이디와 비밀번호를 확인해주세요")
-        }
     </script>
 
 	<!-- 회원가입 실패했을 때 -->
@@ -122,10 +81,11 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">회원가입</h2>
-                        <form action="signUp" method="POST" class="register-form" name="sign_up" id="sign_up">
+                        <form action="/member/signUp" method="POST" class="register-form" name="sign_up" id="sign_up">
                             <div class="form-group">
                                 <label for="member_id"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="member_id" id="member_id" placeholder="아이디"/>
+                                <div id="member_idText"></div>                     
                             </div>
                             <div class="form-group">
                             	<label for="member_password"><i class="zmdi zmdi-lock"></i></label>
@@ -162,6 +122,7 @@
 <script
   src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
  <script src="/resources/js/bootstrap.min.js"></script>
+ <script src="/resources/js/signUp_check.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- sweetalert -->
 </body>
