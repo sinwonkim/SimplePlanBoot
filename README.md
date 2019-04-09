@@ -6,9 +6,13 @@ If you do using this you can easy to make a plan ^_^
 ## 환경
 
 Framework: Spring boot(2.1.3)
+
 Build Tool : Maven
+
 DB: MySQL
+
 Language: Java, JavaScript
+
 library & API: JSTL, weather API, WYSIWYG editor(ck)
 
 
