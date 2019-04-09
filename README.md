@@ -4,19 +4,13 @@
 If you do using this you can easy to make a plan ^_^
 ---
 ## 환경
-FrameWork : Spring boot(2.1.3)
 
-Build : Maven
+Framework: Spring boot(2.1.3)
+Build Tool : Maven
+DB: MySQL
+Language: Java, JavaScript
+library & API: JSTL, weather API, WYSIWYG editor(ck)
 
-DB: MySQL+MyBatis
-
-Front End: HTML, CSS, JavaScript, BootStrap
-
-Back End: JAVA
-
-library: JSTL
-
-API : weather API,ck editor
 
 ## 구현한 기능
 메인페이지 
@@ -30,7 +24,7 @@ API : weather API,ck editor
 - 로그인시 세션  , 로그인 유지 체크시(쿠키)
 
 게시판
-- crud,본인 아닐시에 수정,삭제 x  
+- crud 및 관리자 권한 처리  
 - ckeditor
 - 게시판 검색 작성자,내용
 - 댓글 본인일 경우에만 삭제 가능 
