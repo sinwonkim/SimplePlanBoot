@@ -13,7 +13,7 @@ DB: MySQL
 
 Language: Java, JavaScript
 
-library & API: JSTL, weather API, WYSIWYG editor(ck)
+library & API: JSTL, bcrypt, weather API, WYSIWYG editor(ck)
 
 
 ## 구현한 기능
