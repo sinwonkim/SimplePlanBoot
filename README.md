@@ -4,24 +4,51 @@
 If you do using this you can easy to make a plan ^_^
 ---
 ## 환경
-FrameWork : Spring boot(2.1.3)
 
-Build : Maven
+Framework: Spring boot(2.1.3)
 
-DB: MySQL+MyBatis
+Build Tool : Maven
 
-Front End: HTML, CSS, JavaScript, BootStrap
+DB: MySQL
 
-Back End: JAVA
+Language: Java, JavaScript
 
-library: JSTl
+library & API: JSTL, weather API, WYSIWYG editor(ck)
 
-API : weather API,ck editor
+
+## 구현한 기능
+메인페이지 
+- todoList 
+- wheather Api
+
+
+회원가입
+- 아이디 중복검사  
+- 비밀번호,이메일 유효성 검사 
+- 로그인시 세션  , 로그인 유지 체크시(쿠키)
+
+게시판
+- crud 및 관리자 권한 처리  
+- ckeditor
+- 게시판 검색 작성자,내용
+- 댓글 본인일 경우에만 삭제 가능 
+
+
+
+
+
+
+
+
 
 
 
 ---
+# 유튜브 동영상 입니다. 아래 화면을 누르시면 녹음된 화면 유튜브를 통해 볼 수 있습니다.
+[![Watch the video](https://i.imgur.com/eJHxLRE.jpg)](https://youtu.be/xfcV8GshYaM)
 ---
+---
+
 ## 메인화면
 <div>
 <img src = "https://i.imgur.com/s8StWaB.jpg">
@@ -34,23 +61,59 @@ API : weather API,ck editor
 
 ## 회원가입
 <div>
-<img src = "https://i.imgur.com/ozy175Q.png">
+<img src = "https://i.imgur.com/z6NTZl0.png">
 </div>
 
 ## 게시판
 <div>
-<img src = "https://i.imgur.com/tOLYTtZ.png">
+<img src = "https://i.imgur.com/ep8nrcX.png">
 </div>
 
 ## 게시판 글 작성
 <div>
-<img src = "https://i.imgur.com/5uxDPab.png">
+<img src = "https://i.imgur.com/woUCfOM.png">
+</div>
+
+## 게시판 글 댓글
+<div>
+<img src = "https://i.imgur.com/Tp0bXaP.png">  
 </div>
 
 ## 게시판 글 수정
 <div>
 <img src = "https://i.imgur.com/sZUE2QB.png">
 </div>
+
+## 게시판 글 검색
+<div>
+<img src = "https://i.imgur.com/IAlSTkY.png">
+</div>
+
+## 파일구조
+<div>
+<img src = "https://i.imgur.com/ci8WV53.png">
+</div>
+
+<div>
+<img src = "https://i.imgur.com/Wba98bf.png">
+</div>
+
+##테이블구조 
+## member(회원관리)
+<div>
+<img src = "https://i.imgur.com/A5Um4ql.png">
+</div>
+
+## board(게시판)
+<div>
+<img src = "https://i.imgur.com/VJajN1x.png">
+</div>
+
+## comment(게시팟 댓글)
+<div>
+<img src = "https://i.imgur.com/0QDSTxZ.png">
+</div>
+
 
 
 
@@ -177,4 +240,5 @@ boardService.boardInsert() 를 통해 폼에서 작성된 writer와, title,conte
 
 참고사항
 ---
-1인개발 3월 15일부터 현재 진행중 입니다.
+1. 혼자 개발하였으며 개발 기간은 약 한달 정도 됩니다.
+2. 서버는 따로 사용하지 않았고 스프링부트를 이용하여 로컬에서 작업했습니다.
