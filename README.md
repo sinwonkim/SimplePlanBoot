@@ -13,7 +13,7 @@ DB: MySQL
 
 Language: Java, JavaScript
 
-library & API: JSTL, weather API, WYSIWYG editor(ck)
+library & API: JSTL, bcrypt, weather API, WYSIWYG editor(ck)
 
 
 ## 구현한 기능
@@ -24,7 +24,7 @@ library & API: JSTL, weather API, WYSIWYG editor(ck)
 
 회원가입
 - 아이디 중복검사  
-- 비밀번호,이메일 유효성 검사 
+- 비밀번호(크립트로 암호화),이메일 유효성 검사 
 - 로그인시 세션  , 로그인 유지 체크시(쿠키)
 
 게시판
@@ -96,6 +96,11 @@ library & API: JSTL, weather API, WYSIWYG editor(ck)
 
 <div>
 <img src = "https://i.imgur.com/Wba98bf.png">
+</div>
+
+## 비번 암호화
+<div>
+<img src = "https://i.imgur.com/a7BQJjp.png">
 </div>
 
 ##테이블구조 
