@@ -16,10 +16,11 @@
 		]]>	
 	</select>	
 	
+	<!-- 비번가져오기 -->
 	 <select id="loginCheck" resultType="String">
 		<![CDATA[
-		select member_id,member_password from member
-		where member_id = #{member_id} AND member_password = #{member_password}
+		select member_password from member
+		where member_id = #{member_id}
 		]]>	
 	</select>	
 	

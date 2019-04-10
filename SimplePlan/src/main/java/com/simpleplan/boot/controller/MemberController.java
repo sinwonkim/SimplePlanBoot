@@ -39,6 +39,9 @@ public class MemberController {
 	public String loginCheck(@ModelAttribute MemberVO memberVO,HttpServletResponse response,HttpServletRequest request, HttpSession session) throws Exception {
 		 String cookie = request.getParameter("useCookie");
 		 System.out.println(">>>>>>>>>"+cookie);
+		
+		 
+		 
 		boolean result = memberService.loginCheck(memberVO);	
 		String location = "";
 		if (result) { // true일 경우 세션에 등록 
@@ -87,6 +90,7 @@ public class MemberController {
 		boolean result = memberService.signUpCheck(memberVO);
 		String location ="";
 		if(result) { // 회원여부 존재하지 않으면  true 를 반환해서  회원가입 실행 
+			
 			location ="main"; 
 			memberService.signUp(memberVO);	 // 실질적 회원가입 
 			session.setAttribute("member_id", memberVO.getMember_id());
@@ -106,10 +110,10 @@ public class MemberController {
 		boolean result = memberService.signUpCheck(memberVO);
 		if(result) {//회원가입가능
 			returnData.put("code", "1");
-			returnData.put("message", "사용가능한아이디 :)");
+			returnData.put("message", "사용 가능한 아이디 입니다.");
 		}else {//아이디중복됨
 			returnData.put("code", "0");
-			returnData.put("message", "중복된아이디 :(");
+			returnData.put("message", "중복된 아이디 입니다.");
 		}
 		
 		return returnData;

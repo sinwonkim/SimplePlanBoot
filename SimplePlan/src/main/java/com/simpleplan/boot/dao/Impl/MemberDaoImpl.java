@@ -28,9 +28,9 @@ public class MemberDaoImpl implements MemberDao {
 	// 회원 로그인 확인
 	@Override
 	public String loginCheck(MemberVO memberVO) throws Exception {
-		String name = sqlssion.selectOne(namespace+".loginCheck", memberVO);
+		String hashedPw = sqlssion.selectOne(namespace+".loginCheck", memberVO);
 		
-		return name;
+		return hashedPw;
 	}	
 	// 회원가입 중복 체크 
 	@Override

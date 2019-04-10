@@ -4,6 +4,7 @@ package com.simpleplan.boot.service.Impl;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import com.simpleplan.boot.dao.MemberDao;
@@ -24,15 +25,20 @@ public class MemberServiceImpl implements MemberService {
 	// 회원가입 
 	@Override
 	public void signUp(MemberVO memberVO) throws Exception {
-		 memberDao.signUp(memberVO);	
+		//비밀번호 bcrypt암호화
+		String hashedPw = BCrypt.hashpw(memberVO.getMember_password(), BCrypt.gensalt());
+		memberVO.setMember_password(hashedPw);
+		memberDao.signUp(memberVO);
 	}
 
 	// 회원 로그인 체크
 	@Override
 	public boolean loginCheck(MemberVO memberVO) throws Exception {
-		String result = memberDao.loginCheck(memberVO);
+		String hashedPw = memberDao.loginCheck(memberVO);
 		
-		return (result == null) ? false : true;
+		boolean result = BCrypt.checkpw(memberVO.getMember_password(), hashedPw);
+		
+		return result;
 	}
 	
 	//중복 회원 확인 
